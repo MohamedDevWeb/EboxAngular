@@ -1,0 +1,167 @@
+.accueil-main-bg {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #eaf2fb 0%, #f8fbfe 100%);
+  padding: 0;
+}
+.hero-banner {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 38px;
+  background: linear-gradient(90deg, #02417a 63%, #1c73c9 100%);
+  color: #fff;
+  padding: 0 0 0 48px;
+  border-radius: 0 0 28px 0;
+  box-shadow: 0 2px 12px #0c2c6820;
+  margin-bottom: 40px;
+  min-height: 340px;
+
+  .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -1.3px;
+      color: #fafdff;
+    }
+    .hero-sub {
+      font-size: 1.27rem;
+      font-weight: 400;
+      margin-bottom: 28px;
+      color: #dbeffe;
+      opacity: 0.96;
+      max-width: 540px;
+    }
+    .hero-cta-row {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 22px;
+      .cta {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        color: #02417a;
+        font-size: 1.11rem;
+        font-weight: 600;
+        padding: 12px 22px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 1px 8px #02417a12;
+        cursor: pointer;
+        gap: 12px;
+        transition: background 0.17s, color 0.14s, transform 0.14s;
+        .icon mat-icon { font-size: 1.2rem; margin-right: 4px; }
+        &:hover { background: #eaf2fb; color: #1976d2; transform: translateY(-1px) scale(1.04);}
+      }
+      .cta-analyses { background: #d9f3ff; color: #0e405e; }
+      .cta-rdv { background: #fff5e1; color: #196cb0; }
+    }
+  }
+  .hero-img {
+    align-self: center;
+    img {
+      width: 250px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 22px;
+      box-shadow: 0 2px 15px #042d4e2a;
+      background: #fff;
+      margin: 30px 40px 30px 0;
+    }
+  }
+}
+
+// Section à propos + partenaires
+.accueil-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  margin: 45px auto 0 auto;
+  max-width: 1200px;
+
+  .about-card, .partners-card {
+    flex: 1 1 320px;
+    background: #fff;
+    padding: 32px 26px 30px 26px;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px #0550a210;
+    min-width: 270px;
+    max-width: 490px;
+    margin: 0 0 30px 0;
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #02417a;
+      font-size: 1.26rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    p {
+      color: #273042;
+      font-size: 1.11rem;
+      margin-bottom: 18px;
+      opacity: 0.97;
+    }
+    .learn-more {
+      color: #1c73c9;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: underline;
+      &:hover { color: #0e405e; text-decoration: none;}
+    }
+    .partners-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      .partner {
+        background: #eaf6fd;
+        color: #1976d2;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        box-shadow: 0 1px 5px #16508a13;
+        transition: background 0.15s, color 0.14s;
+        &:hover { background: #d3e8ff; color: #0e405e; }
+      }
+      .inami { background: #f1ebff; color: #7956cf; }
+      .sciensano { background: #eafffa; color: #089981; }
+      .masante { background: #fff7e0; color: #ffb400; }
+      .belgium { background: #eaf2fb; color: #02417a; }
+    }
+  }
+}
+
+// Footer simple
+.accueil-footer {
+  text-align: center;
+  margin: 48px 0 20px 0;
+  color: #205080;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.92;
+  mat-icon {
+    vertical-align: middle;
+    margin-right: 7px;
+    font-size: 1.18rem;
+    color: #1976d2;
+  }
+}
+
+// Responsive
+@media (max-width: 1050px) {
+  .hero-banner { flex-direction: column; padding: 0 0 0 18px; .hero-img { margin: 16px auto 0 auto; } }
+  .accueil-section { flex-direction: column; align-items: center;}
+}
+@media (max-width: 600px) {
+  .hero-banner { padding: 0 0 0 0; border-radius: 0 0 16px 0; }
+  .hero-content h1 { font-size: 2.05rem;}
+  .accueil-footer { font-size: 0.93rem;}
+}

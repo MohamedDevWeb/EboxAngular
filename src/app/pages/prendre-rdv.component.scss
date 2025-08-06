@@ -1,0 +1,47 @@
+.rdv-root {
+  max-width: 700px; margin: 0 auto; padding: 3em 0 4em 0;
+}
+.rdv-card {
+  border-radius: 2.3em; padding: 2.1em 2.4em 2em 2.4em;
+  box-shadow: 0 7px 30px 0 rgba(40,90,150,0.13);
+  background: #fafcff;
+  h2 {
+    margin: 0 0 1.4em 0; display: flex; align-items: center; gap: 0.6em;
+    font-weight: 700; font-size: 1.5em; color: #115092;
+    mat-icon { color: #1374bd;}
+  }
+}
+.rdv-stepper {
+  margin-bottom: 1.4em;
+}
+.rdv-step {
+  display: flex; flex-direction: column; gap: 1.7em; margin: 1em 0;
+  .rdv-actions {
+    margin-top: 1.7em; display: flex; gap: 1em; flex-wrap: wrap;
+    button { min-width: 150px; font-weight: 600;}
+  }
+}
+.rdv-upload {
+  display: flex; flex-direction: column; gap: 0.6em; margin: 0.8em 0 0.2em 0;
+  label { display: flex; align-items: center; gap: 0.6em; font-weight: 500; color: #085b99; font-size: 1.06em;}
+  input[type="file"] { margin-top: 0.5em;}
+  .rdv-file {
+    background: #e4f4ff; border-radius: 8px; padding: 0.55em 1em;
+    display: flex; align-items: center; gap: 1.2em; font-size: 1em;
+    mat-icon { color: #115092; }
+  }
+}
+.rdv-loading {
+  margin: 1.8em 0 0.5em 0; display: flex; align-items: center; gap: 1.1em; font-size: 1.13em;
+  mat-spinner { width: 42px !important; height: 42px !important; }
+}
+.rdv-success {
+  text-align: center; background: #e7f7e8; margin-top: 2em; border-radius: 1.8em;
+  .big-ico { font-size: 3em; margin-bottom: 0.6em;}
+  h3 { font-size: 1.3em; color: #278f48;}
+  button { margin-top: 1.1em;}
+}
+@media (max-width: 800px) {
+  .rdv-root { padding: 1.2em 0 2em 0;}
+  .rdv-card { padding: 1.2em 0.7em 1em 0.7em;}
+}

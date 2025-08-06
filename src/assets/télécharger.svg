@@ -1,0 +1,17 @@
+<svg width="350" height="220" viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="350" height="220" fill="white"></rect>
+  <!-- Cœur bleu -->
+  <path d="M175 60
+           C175 44, 150 32, 130 52
+           C110 72, 135 108, 175 130
+           C215 108, 240 72, 220 52
+           C200 32, 175 44, 175 60
+           Z" fill="#1777cb" stroke="#1777cb" stroke-width="4"></path>
+  <!-- Croix verte -->
+  <rect x="163" y="83" width="24" height="8" rx="2" fill="#37b66a"></rect>
+  <rect x="171" y="75" width="8" height="24" rx="2" fill="#37b66a"></rect>
+  <!-- Texte BRUBOX -->
+  <text x="175" y="175" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="bold" fill="#1777cb" text-anchor="middle" letter-spacing="2">BRUBOX</text>
+  <!-- Texte E-ADMINISTRATION -->
+  <text x="175" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="500" fill="#a28ce4" text-anchor="middle" letter-spacing="2">E-ADMINISTRATION</text>
+</svg>

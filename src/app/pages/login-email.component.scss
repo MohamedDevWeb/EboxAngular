@@ -1,0 +1,79 @@
+
+.login-simulate {
+  min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f7fafd;
+  .login-method-logo {
+    width: 42px; // Ajuste ici ! Avant c'était trop grand, là c'est clean
+    max-width: 44px;
+    margin-bottom: 1.1rem;
+  }
+  .login-loader { width: 36px; height: 36px; border: 4px solid #ffe34a; border-top: 4px solid #005288; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1.2rem; }
+  @keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
+  p { color: #0b3552; font-size: 1.11rem; margin-top: 0.7rem; }
+}
+.simulate-container { min-height: 60vh; display: flex; justify-content: center; align-items: center;
+  .card { background: #fff; border-radius: 18px; box-shadow: 0 2px 10px #1a237e17; padding: 2.3rem 2.4rem 1.7rem 2.4rem; text-align: center;
+    .logo-email { height: 54px; margin-bottom: 1rem; }
+    .input-code { margin: 0.7rem 0; font-size: 1.18rem; letter-spacing: 0.27em; text-align: center; padding: 0.5rem 1.5rem; border-radius: 8px; border: 1.5px solid #1a237e; }
+    .btn { margin-top: 1.2rem; padding: 0.7rem 2.4rem; background: #861f41; border: none; color: #fff; border-radius: 7px; font-size: 1.08rem; font-weight: 600; cursor: pointer; }
+    .btn:disabled { background: #bdbdbd; cursor: not-allowed; }
+    .btn:hover:not(:disabled) { background: #005288; }
+    .success { color: #388e3c; font-size: 1.17rem; margin-top: 1.2rem; }
+    .spinner { width: 46px; height: 46px; border: 4px solid #861f41; border-top: 4px solid #fff; border-radius: 50%; animation: spin 0.9s linear infinite; margin: 1.4rem auto; }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  }
+}
+
+.login-method-page {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f6f7fb;
+
+  .login-method-card {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 8px 40px #0001;
+    border: 2.2px solid #861f41;
+    padding: 2.5rem 2.4rem 2rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 420px;
+
+    img {
+      width: 60px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.42rem;
+      font-weight: 700;
+      color: #861f41;
+      margin-bottom: 0.5rem;
+    }
+    .desc {
+      font-size: 1.09rem;
+      color: #222;
+      margin-bottom: 2.1rem;
+      text-align: center;
+    }
+
+    .login-btn {
+      background: #861f41;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.12rem;
+      border-radius: 2em;
+      border: none;
+      padding: 0.95em 2.4em;
+      cursor: pointer;
+      transition: background 0.15s;
+      &:hover, &:focus {
+        background: #691631;
+      }
+    }
+  }
+}

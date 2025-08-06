@@ -1,0 +1,52 @@
+<div class="chatbot-root" [class.dark]="isDarkMode">
+  <div class="chatbot-header">
+    <mat-icon class="main-icon">smart_toy</mat-icon>
+    <span>eBox Santé+ Assistant IA</span>
+    <button mat-icon-button (click)="switchTheme()" title="Changer le thème">
+      <mat-icon>{{isDarkMode ? 'brightness_7' : 'brightness_2'}}</mat-icon>
+    </button>
+    <button mat-icon-button (click)="clearChat()" title="Effacer la conversation">
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+  </div>
+
+  <div class="chatbot-chat-container" #chatContainer>
+    <ng-container *ngFor="let msg of chatHistory">
+      <div class="msg-row" [class.user]="msg.sender === 'user'" [class.bot]="msg.sender === 'bot'">
+        <div class="avatar">
+          <mat-icon *ngIf="msg.sender === 'user'">person</mat-icon>
+          <mat-icon *ngIf="msg.sender === 'bot'">smart_toy</mat-icon>
+        </div>
+        <div class="msg-bubble">
+          <div class="msg-content" [innerHTML]="msg.content"></div>
+          <div class="msg-meta">{{ msg.timestamp | date:'shortTime' }}</div>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="loading" class="loader-row">
+      <div class="avatar bot"><mat-icon>smart_toy</mat-icon></div>
+      <div class="msg-bubble bot-loader">
+        <span class="loader"></span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="errorMsg" class="chatbot-error">
+    <mat-icon>error_outline</mat-icon>
+    {{errorMsg}}
+  </div>
+
+  <form class="chatbot-input-row" (ngSubmit)="sendMessage()">
+    <input #input
+           autocomplete="off"
+           [formControl]="messageCtrl"
+           placeholder="Posez votre question à l’IA…"
+           (keydown)="handleEnter($event)"
+           [disabled]="loading"
+           maxlength="800"
+    />
+    <button mat-icon-button color="primary" type="submit" [disabled]="loading || !messageCtrl.value?.trim()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</div>

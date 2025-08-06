@@ -1,0 +1,4 @@
+<div class="lang-switcher" [class.top]="position === 'top'" [class.bottom]="position === 'bottom'">
+  <button [class.active]="locale === 'fr'" (click)="setLang('fr')">FR</button>
+  <button [class.active]="locale === 'nl'" (click)="setLang('nl')">NL</button>
+</div>

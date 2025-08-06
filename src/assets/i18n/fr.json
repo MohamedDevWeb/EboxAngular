@@ -1,0 +1,304 @@
+{
+  "DASHBOARD": "Tableau de bord",
+  "MES_DOCUMENTS": "Mes documents",
+  "ANALYSES_EXAMENS": "Analyses & Examens",
+  "PRENDRE_RDV": "Prendre RDV",
+  "GUIDE_SANTE": "Guide Santé",
+  "NOTIFICATIONS": "Notifications",
+  "CHAT_IA": "Chat IA",
+  "PROFIL": "Profil",
+  "PARAMETRES": "Paramètres",
+  "HISTORIQUE": "Historique médical",
+
+
+  "LOGIN_AUTH_IDENT_ADMIN": "Identification administrateur",
+  "LOGIN_AUTH_TITLE": "Méthode d’identification",
+  "LOGIN_AUTH_IDENTIFICATION": "Identification",
+  "LOGIN_AUTH_WITH_EID": "Avec carte eID",
+  "LOGIN_AUTH_WITH_ITSME": "Avec itsme®",
+  "LOGIN_AUTH_CREATE_ITSME": "Créer un compte itsme®",
+  "LOGIN_AUTH_WITH_EMAIL": "Avec e-mail sécurisé",
+  "LOGIN_AUTH_WITH_MOBILE": "Avec application mobile",
+  "LOGIN_AUTH_WITH_EUROPE": "Avec identifiant européen",
+  "LOGIN_AUTH_HELP": "Besoin d’aide ?",
+
+  "LOGIN_ITSME_TITLE": "Connexion itsme®",
+  "LOGIN_ITSME_QR_DESC": "Scannez le QR code avec l’application itsme® pour continuer.",
+  "LOGIN_ITSME_WAITING": "Vérification de votre identité itsme®...",
+  "LOGIN_ITSME_SUCCESS": "Authentification itsme® réussie.",
+
+  "LOGIN_EID_TITLE": "Connexion eID",
+  "LOGIN_EID_INSERT_CARD": "Insérez votre carte eID dans le lecteur.",
+  "LOGIN_EID_CONTINUE": "Continuer",
+  "LOGIN_EID_READING": "Lecture de la carte eID...",
+  "LOGIN_EID_DONE": "Connexion eID réussie.",
+
+  "LOGIN_EMAIL_TITLE": "Connexion Email sécurisé",
+  "LOGIN_EMAIL_CODE_SENT": "Un code de sécurité a été envoyé à votre adresse email.",
+  "LOGIN_EMAIL_PLACEHOLDER": "Entrez le code reçu",
+  "LOGIN_EMAIL_VALIDATE": "Valider",
+  "LOGIN_EMAIL_CHECKING": "Vérification du code...",
+  "LOGIN_EMAIL_DONE": "Connexion email réussie.",
+
+  "LOGIN_MOBILE_TITLE": "Connexion mobile",
+  "LOGIN_MOBILE_CODE_DESC": "Un code a été envoyé sur votre application mobile.",
+  "LOGIN_MOBILE_CODE_HINT": "Entrez le code à 6 chiffres pour continuer.",
+  "LOGIN_MOBILE_WAITING": "Vérification du code mobile...",
+  "LOGIN_MOBILE_SUCCESS": "Connexion mobile réussie.",
+  "VALIDATE": "Valider",
+
+  "LOGIN_EU_TITLE": "Connexion Européenne",
+  "LOGIN_EU_WAITING": "Redirection vers l’identifiant européen...",
+  "LOGIN_EU_DONE": "Connexion européenne réussie.",
+
+  "LOGIN_REDIRECT_IN_PROGRESS": "Connexion en cours...",
+  "LOGIN_REDIRECT_WAIT": "Merci de patienter pendant la redirection.",
+   "LOGIN_FLUX_CHOOSE": "Choisissez votre profil",
+  "LOGIN_FLUX_CITOYEN": "Citoyen",
+  "LOGIN_FLUX_ENTREPRISE": "Entreprise",
+  "LOGIN_FLUX_PRO": "Professionnel",
+  "LOGIN_FLUX_COLLAB": "Connexion collaborateur",
+    "RDV_CONSULTATION_GENERALE": "Consultation générale",
+  "RDV_RENOUVELLEMENT_ORDONNANCE": "Renouvellement ordonnance",
+  "RDV_RESULTATS_ANALYSE": "Résultats analyse",
+  "RDV_SUIVI_TRAITEMENT": "Suivi traitement",
+  "RDV_URGENCE_LEGERE": "Urgence légère",
+
+  "CONTINUE": "Continuer",
+
+  "ACCUEIL_TITLE": "Bienvenue sur eBox Santé+",
+  "ACCUEIL_SUBTITLE": "Votre espace santé numérique à Bruxelles",
+  "ACCUEIL_CTA_DOCS": "Accéder à mes documents",
+  "ACCUEIL_CTA_ANALYSES": "Voir mes analyses",
+  "ACCUEIL_CTA_RDV": "Prendre RDV",
+  "ACCUEIL_A_PROPOS": "À propos",
+  "ACCUEIL_A_PROPOS_DESC": "Votre santé, votre espace, votre sécurité.",
+  "ACCUEIL_LEARN_MORE": "En savoir plus",
+  "ACCUEIL_PARTENAIRES": "Partenaires",
+  "ACCUEIL_SECU": "Données protégées, accès 100% sécurisé.",
+
+  "FOOTER_COPY": "&copy; {{year}} eBox Santé+ – Projet démonstration",
+
+  "SIDEBAR": {
+    "ACCUEIL": "Accueil",
+    "DOCS": "Mes documents",
+    "ANALYSES": "Analyses médicales",
+    "RDV": "Prendre RDV",
+    "NOTIFS": "Notifications",
+    "CHATBOT": "Chatbot",
+    "PROFIL": "Profil",
+    "CONTACT": "Contact",
+    "LOGOUT": "Déconnexion"
+  },
+
+  "SIDEBAR_ACCUEIL": "Accueil",
+  "SIDEBAR_MES_DOCUMENTS": "Mes documents",
+  "SIDEBAR_ANALYSES": "Analyses médicales",
+  "SIDEBAR_PRENDRE_RDV": "Prendre RDV",
+  "SIDEBAR_NOTIFICATIONS": "Notifications",
+  "SIDEBAR_CHATBOT": "Chatbot",
+  "SIDEBAR_PROFIL": "Profil",
+  "SIDEBAR_CONTACT": "Contact",
+  "SIDEBAR_DECONNEXION": "Déconnexion",
+    "MESDOC_SANG": "Analyse sanguine",
+  "MESDOC_IRM": "IRM",
+  "MESDOC_RADIO": "Radiographie",
+  "MESDOC_ECG": "ECG",
+  "MESDOC_ORL": "Bilan ORL",
+  "MESDOC_AUTRE": "Autre document",
+
+  "ANALYSE_SANG": "Analyse sanguine",
+  "ANALYSE_URINE": "Analyse d’urine",
+  "IRM_CRANE": "IRM du crâne",
+  "IRM_ABDOMEN": "IRM de l’abdomen",
+  "RADIO_POUX": "Radiographie des poumons",
+  "ECG_REPOS": "ECG au repos",
+  "BILAN_HEPATIQUE": "Bilan hépatique",
+  "BILAN_CARDIAQUE": "Bilan cardiaque",
+
+  "DOC_TYPE_SANG": "Analyse de sang",
+  "DOC_TYPE_IRM": "Imagerie par résonance magnétique",
+  "DOC_TYPE_RADIO": "Radiographie",
+  "DOC_TYPE_ECG": "Électrocardiogramme",
+  "DOC_TYPE_AUTRE": "Autre document",
+
+  "LAYOUT": {
+    "SEARCH_PLACEHOLDER": "Recherche (ex : ordonnance, analyse...)",
+    "LOGOUT": "Déconnexion",
+    "DEMO_PROJECT": "Projet démonstration"
+  },
+  "SEARCH": "Recherche (ex : ordonnance, analyse...)",
+  "RECHERCHE_PLACEHOLDER": "Recherche (ex : ordonnance, analyse...)",
+
+  "DOCS": {
+    "TITLE": "Mes documents",
+    "UPLOAD": "Ajouter un document",
+    "SEARCH": "Recherche (nom, type, médecin…)",
+    "TYPE": "Type de document",
+    "ALL": "Tous types",
+    "ORDONNANCE": "Ordonnance",
+    "RADIO": "Radio",
+    "ANALYSE": "Analyse",
+    "LETTRE": "Lettre",
+    "NOUVEAU": "Nouveau"
+  },
+ "MESDOCS_TITRE": "Mes documents médicaux",
+"MESDOCS_AJOUTER": "Ajouter un document",
+"MESDOCS_SEARCH": "Recherche (nom, type, médecin...)",
+"MESDOCS_ALL_TYPES": "Tous types",
+"MESDOCS_ANALYSE": "Analyse",
+"MESDOCS_ORDONNANCE": "Ordonnance",
+"MESDOCS_RADIO": "Radio",
+"MESDOCS_LETTRE": "Lettre",
+"MESDOCS_NOUVEAU": "Nouveau",
+
+
+
+
+  "PRENOM": "Prénom",
+  "NOM": "Nom",
+  "EMAIL": "Email",
+  "GROUPE_SANGUIN": "Groupe sanguin",
+  "MUTUELLE": "Mutuelle",
+  "ALLERGIES": "Allergies",
+  "ENREGISTRER": "Enregistrer",
+  "ANNULER": "Annuler",
+  "MODIFIER": "Modifier",
+  "NUMERO_INAMI": "Numéro INAMI",
+  "VACCINATION": "Vaccination",
+  "A_JOUR": "À jour",
+  "AUCUNE": "Aucune",
+  "MEDECIN_TRAITANT": "Médecin traitant",
+  "TELECHARGER_ATTESTATION": "Télécharger l’attestation",
+  "EXPORT_RGPD": "Exporter mes données RGPD",
+  "SUPPRIMER_COMPTE": "Supprimer mon compte",
+  "MOT_DE_PASSE": "Mot de passe",
+  "2FA_ACTIVE": "Double authentification activée",
+  "THEME": "Thème",
+  "SOMBRE": "Sombre",
+  "CLAIR": "Clair",
+  "DERNIERES_CONNEXIONS": "Dernières connexions",
+  "CHARGEMENT_PROFIL": "Chargement du profil...",
+  "PATIENT": "Patient",
+  "MÉDECIN": "Médecin",
+  "MEDECIN": "Médecin",
+  "ACTIF": "Actif",
+  "INACTIF": "Inactif",
+  "SUCCES_CONNEXION": "Connexion réussie",
+  "ECHEC_CONNEXION": "Connexion échouée",
+
+  "NOTIF_TITRE": "Notifications",
+  "NOTIF_UNREAD": "Non lue",
+  "NOTIF_UNREAD_PLURAL": "Non lues",
+  "NOTIF_MARK_AS_READ": "Marquer comme lue",
+  "NOTIF_MARK_AS_UNREAD": "Marquer comme non lue",
+  "NOTIF_DELETE": "Supprimer",
+  "NOTIF_TOUTES": "Toutes",
+  "NOTIF_INFOS": "Infos",
+  "NOTIF_URGENCES": "Urgences",
+  "NOTIF_RAPPELS": "Rappels",
+  "NOTIF_PARTAGES": "Partages",
+  "NOTIF_LOADING": "Chargement des notifications...",
+  "NOTIF_EMPTY": "Aucune notification pour le moment.",
+  "NOTIF_FILTER_UNREAD": "Afficher seulement les non lues",
+  "NOTIF_CLEAR_ALL": "Tout supprimer",
+  "NOTIF_URGENCE_TITRE": "Urgence : résultat critique",
+  "NOTIF_URGENCE_MSG": "Un résultat d'analyse nécessite une attention immédiate.",
+  "NOTIF_INFO_TITRE": "Nouvelle information",
+  "NOTIF_INFO_MSG": "Découvrez la nouvelle interface eBox Santé+ disponible dès aujourd’hui !",
+  "NOTIF_PARTAGE_TITRE": "Document partagé",
+"NOTIF_PARTAGE_MESSAGE": "Votre médecin a partagé une nouvelle analyse sanguine.",
+"NOTIF_RAPPEL_TITRE": "Rappel : Rendez-vous",
+"NOTIF_RAPPEL_MESSAGE": "Vous avez un rendez-vous demain à 14h avec Dr. Martin.",
+"": "Document partagé",
+"NOTIF_PARTAGE_MSG": "Votre médecin a partagé une nouvelle analyse sanguine.",
+"NOTIF_RAPPEL_MSG": "Vous avez un rendez-vous demain à 14h avec Dr. Martin.",
+"FAQ_DOC_DUPLICATA": "Comment obtenir un duplicata de document médical ?",
+"FAQ_DOC_DUPLICATA_REP": "Vous pouvez demander un duplicata auprès de votre médecin ou via l’espace documents.",
+"FAQ_RDV_MEDECIN": "Comment prendre rendez-vous avec un médecin partenaire ?",
+"FAQ_RDV_MEDECIN_REP": "Utilisez la section Prendre RDV pour accéder à l’agenda de nos partenaires.",
+"FAQ_PERTE_ACCES": "Que faire en cas de perte d’accès à mon compte ?",
+"FAQ_PERTE_ACCES_REP": "Cliquez sur « Mot de passe oublié » ou contactez notre support.",
+"FAQ_PROTECTION_DONNEES": "Est-ce que mes données sont protégées ?",
+"FAQ_PROTECTION_DONNEES_REP": "Oui, toutes vos données sont hébergées et sécurisées en Belgique.",
+"FAQ_ENVOI_EMAIL": "Puis-je envoyer mes questions par email ?",
+"FAQ_ENVOI_EMAIL_REP": "Oui, contactez-nous à support@eboxsanteplus.be.",
+
+
+
+
+
+
+
+
+
+
+  "DOCS_BOUTON_VOIR": "Voir",
+
+  "SEARCH": "Recherche (ex : ordonnance, analyse...)",
+
+
+
+
+
+  "ANALYSES_TITRE": "Analyses & Examens",
+  "ANALYSES_DESCRIPTION": "Consultez vos résultats d’analyses.",
+  "ANALYSES_TELECHARGER": "Télécharger",
+  "ANALYSES_RESULT_PENDING": "En attente du résultat",
+
+  "RDV_TITRE": "Prendre un rendez-vous médical",
+  "RDV_ETAPE1": "Sélection",
+  "RDV_ETAPE2": "Date & heure",
+  "RDV_ETAPE3": "Infos complémentaires",
+  "RDV_MEDECIN": "Médecin",
+  "RDV_MOTIF": "Motif du RDV",
+  "RDV_SUIVANT": "Suivant",
+
+
+
+  "PROFIL_TITRE": "Profil",
+  "PROFIL_DECONNEXION": "Déconnexion",
+
+  "CONTACT": {
+  "TITLE": "Contact & Support",
+  "SLOGAN": "Besoin d’aide ? Contactez-nous !",
+  "FORM_TITLE": "Formulaire de contact",
+  "NAME": "Nom complet",
+  "EMAIL": "Email",
+  "PHONE": "Téléphone",
+  "SUBJECT": "Sujet",
+  "MESSAGE": "Votre message",
+  "ATTACH": "Joindre un fichier",
+  "CONSENT": "J’accepte que mes données soient utilisées pour le support",
+  "SEND": "Envoyer",
+  "RESET": "Réinitialiser",
+  "LIVE_CHAT": "Contacter le live chat",
+  "QUICK_SUPPORT": "Support rapide",
+  "ADDRESS": "Avenue de la Santé 15, 1000 Bruxelles",
+  "FAQ": "Foire aux questions",
+  "THANKS": "Merci, votre demande a bien été envoyée. Nous vous répondrons sous 24h.",
+  "INTRO": "Notre équipe support vous répond du lundi au samedi.",
+  "INTRO2": "Contactez-nous par email, téléphone ou via ce formulaire.",
+
+
+
+  "ANALYSES": "Analyse médicale",
+
+  "LANG": {
+    "FR": "Français",
+    "NL": "Néerlandais"
+  }
+  }}
+
+
+
+
+
+
+
+
+
+
+
+
+

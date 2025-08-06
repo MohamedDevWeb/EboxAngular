@@ -1,15 +1,16 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
-# Compiled output
+# Build output
 /dist
 /tmp
 /out-tsc
 /bazel-out
 
-# Node
+# Dependencies
 /node_modules
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-error.log*
+
+# Angular cache
+/.angular/cache
 
 # IDEs and editors
 .idea/
@@ -26,17 +27,21 @@ yarn-error.log
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
+.history/
 
-# Miscellaneous
-/.angular/cache
+# Misc
 .sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
+connect.lock
+coverage/
+libpeerconnection.log
 testem.log
-/typings
+typings/
+.env          # <--- Ajoute bien cette ligne pour ne jamais versionner ton .env
 
 # System files
 .DS_Store
 Thumbs.db
+
+# OS/Windows specific
+ehthumbs.db
+Desktop.ini

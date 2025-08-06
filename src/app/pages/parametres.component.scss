@@ -1,0 +1,63 @@
+.parametres-container {
+  max-width: 480px;
+  margin: 2.4rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.parametres-header {
+  background: #fff;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 12px #00528816;
+  padding: 2rem 1.6rem 1.3rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  h1 {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    gap: 0.7rem;
+    color: #005288;
+    .material-icons { color: #00ADEF; font-size: 2.2rem; }
+  }
+  p {
+    color: #444;
+    font-size: 1.08rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.parametres-card {
+  padding: 2.1rem 1.4rem;
+  border-radius: 1.2em;
+  box-shadow: 0 1px 10px #00528813;
+  background: #eaf3fb;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  .setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7em;
+    font-size: 1.09em;
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      mat-icon { color: #005288; }
+    }
+    &.lang-row {
+      button {
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .parametres-container { padding: 0 0.2rem; }
+  .parametres-header, .parametres-card { padding: 1rem 0.5rem 1.2rem 0.5rem; }
+}

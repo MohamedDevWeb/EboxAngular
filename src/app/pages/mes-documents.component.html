@@ -1,0 +1,59 @@
+<div class="mesdocs-root">
+  <mat-card class="mesdocs-header">
+    <div class="md-title">
+      <mat-icon color="primary">folder_open</mat-icon>
+      {{ 'MESDOCS_TITRE' | translate }}
+    </div>
+    <div class="md-actions">
+      <input #fileUpload type="file" style="display:none" (change)="uploadDoc($event)">
+      <button mat-flat-button color="primary" (click)="uploadTrigger()">
+        <mat-icon>cloud_upload</mat-icon> {{ 'MESDOCS_AJOUTER' | translate }}
+      </button>
+      <mat-form-field class="md-search" appearance="outline">
+        <input matInput [placeholder]="'MESDOCS_SEARCH' | translate" [(ngModel)]="search" (input)="applyFilter()">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-select [(ngModel)]="selectedType" (selectionChange)="onTypeChange($event.value)">
+          <mat-option value="all">{{ 'MESDOCS_ALL_TYPES' | translate }}</mat-option>
+          <mat-option value="Analyse">{{ 'MESDOCS_ANALYSE' | translate }}</mat-option>
+          <mat-option value="Ordonnance">{{ 'MESDOCS_ORDONNANCE' | translate }}</mat-option>
+          <mat-option value="Radio">{{ 'MESDOCS_RADIO' | translate }}</mat-option>
+          <mat-option value="Lettre">{{ 'MESDOCS_LETTRE' | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card>
+
+  <div *ngIf="loading" class="md-loading">
+    <mat-spinner></mat-spinner>
+    <span>{{ 'MESDOCS_CHARGEMENT' | translate }}</span>
+  </div>
+
+  <div class="mesdocs-list" *ngIf="!loading">
+    <mat-card *ngFor="let d of filteredDocs" class="doc-card animate-in">
+      <div class="doc-row">
+        <mat-icon class="doc-icon" [ngClass]="d.type">
+          {{ d.type === 'Analyse' ? 'description' : d.type === 'Ordonnance' ? 'edit_note' : d.type === 'Radio' ? 'image' : 'drafts' }}
+        </mat-icon>
+        <div class="doc-info">
+          <div class="doc-nom">{{ d.nom }}</div>
+          <div class="doc-meta">
+            <span><mat-icon>event</mat-icon> {{d.date | date:'shortDate'}}</span>
+            <span><mat-icon>person</mat-icon> {{d.medecin}}</span>
+            <span class="doc-type">{{ ('MESDOCS_' + d.type.toUpperCase()) | translate }}</span>
+            <span *ngIf="d.status==='Nouveau'" class="doc-new">{{ 'MESDOCS_NOUVEAU' | translate }}</span>
+          </div>
+        </div>
+        <div class="doc-actions">
+          <button mat-icon-button color="primary" (click)="openDoc(d)" matTooltip="{{ 'MESDOCS_OUVRIR' | translate }}"><mat-icon>visibility</mat-icon></button>
+          <button mat-icon-button color="accent" (click)="downloadDoc(d)" matTooltip="{{ 'MESDOCS_TELECHARGER' | translate }}"><mat-icon>download</mat-icon></button>
+          <button mat-icon-button color="warn" (click)="deleteDoc(d)" matTooltip="{{ 'MESDOCS_SUPPRIMER' | translate }}"><mat-icon>delete</mat-icon></button>
+          <button mat-icon-button color="primary" (click)="shareDoc(d)" matTooltip="{{ 'MESDOCS_PARTAGER' | translate }}"><mat-icon>share</mat-icon></button>
+        </div>
+      </div>
+    </mat-card>
+    <div *ngIf="filteredDocs.length === 0" class="md-empty">
+      <mat-icon>folder_off</mat-icon> {{ 'MESDOCS_VIDE' | translate }}
+    </div>
+  </div>
+</div>

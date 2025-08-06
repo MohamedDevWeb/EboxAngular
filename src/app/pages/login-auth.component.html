@@ -1,0 +1,60 @@
+<div class="auth-csam-page">
+  <div class="csam-header">
+    <img src="../../assets/csam.jpg" alt="CSAM" class="csam-logo" />
+    <div class="csam-title">
+      <span class="sub">{{ 'LOGIN_AUTH_IDENT_ADMIN' | translate }}</span>
+    </div>
+  </div>
+  <h2 class="main-title">{{ 'LOGIN_AUTH_TITLE' | translate }}</h2>
+
+  <div class="csam-methods">
+    <div class="csam-methods-row">
+      <button class="csam-card" (click)="authEid()">
+        <img src="../../assets/eid.png" alt="eID" />
+        <div>
+          <div class="card-title">{{ 'LOGIN_AUTH_IDENTIFICATION' | translate }}</div>
+          <div class="card-desc">{{ 'LOGIN_AUTH_WITH_EID' | translate }}</div>
+        </div>
+      </button>
+      <button class="csam-card" (click)="authItsme()">
+        <img src="../../assets/itsmelogo (1).png" alt="Itsme" />
+        <div>
+          <div class="card-title">{{ 'LOGIN_AUTH_IDENTIFICATION' | translate }}</div>
+          <div class="card-desc">{{ 'LOGIN_AUTH_WITH_ITSME' | translate }}</div>
+          <a class="csam-link" href="https://www.itsme.be/fr/" target="_blank">
+            {{ 'LOGIN_AUTH_CREATE_ITSME' | translate }}
+          </a>
+        </div>
+      </button>
+    </div>
+    <div class="csam-methods-row">
+      <button class="csam-card" (click)="authEmail()">
+        <img src="../../assets/561127.png" alt="Email" />
+        <div>
+          <div class="card-title">{{ 'LOGIN_AUTH_IDENTIFICATION' | translate }}</div>
+          <div class="card-desc">{{ 'LOGIN_AUTH_WITH_EMAIL' | translate }}</div>
+        </div>
+      </button>
+      <button class="csam-card" (click)="authMobile()">
+        <img src="../../assets/app.png" alt="Mobile" />
+        <div>
+          <div class="card-title">{{ 'LOGIN_AUTH_IDENTIFICATION' | translate }}</div>
+          <div class="card-desc">{{ 'LOGIN_AUTH_WITH_MOBILE' | translate }}</div>
+        </div>
+      </button>
+    </div>
+    <div class="csam-methods-row">
+      <button class="csam-card" (click)="authEuropean()">
+        <img src="../../assets/Flag_of_Europe.svg" alt="Europe" />
+        <div>
+          <div class="card-title">{{ 'LOGIN_AUTH_IDENTIFICATION' | translate }}</div>
+          <div class="card-desc">{{ 'LOGIN_AUTH_WITH_EUROPE' | translate }}</div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="csam-help-row">
+    <a href="#" class="csam-help-link">{{ 'LOGIN_AUTH_HELP' | translate }}</a>
+  </div>
+</div>

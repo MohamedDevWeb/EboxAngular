@@ -1,0 +1,22 @@
+<div class="simulate-container">
+  <div class="card">
+    <img src="../../assets/itsmelogo.png" alt="itsme" class="logo-itsme" />
+    <h2>{{ 'LOGIN_ITSME_TITLE' | translate }}</h2>
+    <ng-container [ngSwitch]="step">
+      <div *ngSwitchCase="'qr'">
+        <p>{{ 'LOGIN_ITSME_QR_DESC' | translate }}</p>
+        <img src="../../assets/qr-code.png" alt="QR code itsme" class="qr" />
+        <button (click)="simulateScan()" class="btn">
+          {{ 'CONTINUE' | translate }}
+        </button>
+      </div>
+      <div *ngSwitchCase="'waiting'">
+        <p>{{ 'LOGIN_ITSME_WAITING' | translate }}</p>
+        <div class="spinner"></div>
+      </div>
+      <div *ngSwitchCase="'done'">
+        <p class="success">{{ 'LOGIN_ITSME_SUCCESS' | translate }}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

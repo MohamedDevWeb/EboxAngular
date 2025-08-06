@@ -1,0 +1,103 @@
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f7fa;
+
+  .main-content {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f6f7fa;
+    box-shadow: none;
+    z-index: 1;
+  }
+
+  .main-header {
+    background: #005288;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 2.2rem 0 2.2rem;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0 2px 14px #00528813;
+    position: relative;
+    z-index: 10;
+
+    .center {
+      flex: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+      input {
+        width: 330px;
+        max-width: 60vw;
+        padding: 0.5em 1em;
+        border-radius: 1.4em;
+        border: none;
+        font-size: 1.09rem;
+        outline: none;
+        background: #fff;
+        color: #005288;
+        box-shadow: 0 1px 8px #00528810;
+        transition: box-shadow 0.15s;
+        &:focus { box-shadow: 0 2px 12px #009fdc38; }
+      }
+      button { margin-left: 0.6em; }
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 1.1em;
+      justify-content: flex-end;
+      .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 1.1em;
+        mat-icon { font-size: 1.6em; }
+      }
+      .logout-top {
+        background: #e3ecf9;
+        color: #005288;
+        border-radius: 1.5em;
+        margin-left: 1.2em;
+      }
+    }
+  }
+  main {
+    flex: 1;
+    min-height: 0;
+    margin: 0;
+    padding: 0 1.4vw 0 1.4vw;
+    // Ajoute de l’air sans décaler visuellement
+  }
+  .footer-admin {
+    text-align: center;
+    color: #005288;
+    opacity: 0.78;
+    font-size: 1.01em;
+    padding: 1.4em 0 1em 0;
+    background: transparent;
+    letter-spacing: 0.03em;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+    .main-header {
+      flex-direction: column;
+      height: auto;
+      padding: 1em 0.5em;
+      .center input { width: 97vw; min-width: 10vw; }
+    }
+    .main-content main {
+      padding: 0 2vw;
+    }
+  }
+}

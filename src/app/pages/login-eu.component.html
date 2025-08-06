@@ -1,0 +1,15 @@
+<div class="simulate-container">
+  <div class="card">
+    <img src="../../assets/Flag_of_Europe.svg" alt="European ID" class="logo-eu" />
+    <h2>{{ 'LOGIN_EU_TITLE' | translate }}</h2>
+    <ng-container [ngSwitch]="step">
+      <div *ngSwitchCase="'waiting'">
+        <p>{{ 'LOGIN_EU_WAITING' | translate }}</p>
+        <div class="spinner"></div>
+      </div>
+      <div *ngSwitchCase="'done'">
+        <p class="success">{{ 'LOGIN_EU_DONE' | translate }}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

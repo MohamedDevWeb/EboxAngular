@@ -1,0 +1,27 @@
+.login-redirect-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8faff 0%, #e0eeff 100%);
+}
+.spinner {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 7px solid #00528825;
+  border-top: 7px solid #005288;
+  animation: spin 1.1s linear infinite;
+  margin-bottom: 2.3rem;
+}
+.msg {
+  color: #005288;
+  font-size: 1.19rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

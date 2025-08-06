@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.scss */
+
+/* ① Intégration de Tailwind */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; // ou autre thème
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+/* ② Mode clair par défaut */
+html {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* ③ Mode sombre (quand <html class="dark"> est présent) */
+html.dark {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* ④ Reset / réglages globaux */
+body {
+  @apply m-0 p-0 font-sans leading-normal;
+}
+
+/* ⑤ En‑tête */
+header {
+  @apply bg-white dark:bg-gray-800 shadow-md py-4 px-6 flex items-center;
+}
+
+/* ⑥ Sidebar / navigation */
+nav {
+  @apply bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-6;
+}
+
+/* ⑦ Conteneur principal */
+main {
+  @apply flex-1 p-6 overflow-auto;
+}
+
+/* ⑧ Pied de page */
+footer {
+  @apply bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-center py-4 text-sm;
+}
+
+/* ⑨ Titres génériques */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold mb-2;
+}
+
+/* ⑩ Paragraphes génériques */
+p {
+  @apply mb-4;
+}
+
+/* ⑪ Boutons */
+button {
+  @apply inline-block bg-primary text-white font-medium py-2 px-4 rounded hover:bg-secondary transition;
+}
+
+/* ⑫ Formulaires */
+input, select, textarea {
+  @apply border border-gray-300 dark:border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary;
+}

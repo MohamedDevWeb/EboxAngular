@@ -1,0 +1,117 @@
+<div class="rdv-root">
+  <mat-card class="rdv-card">
+    <h2>
+      <mat-icon>calendar_today</mat-icon>
+      {{ 'RDV_TITRE' | translate }}
+    </h2>
+    <form [formGroup]="rdvForm">
+      <mat-horizontal-stepper [selectedIndex]="step" class="rdv-stepper">
+        <!-- Étape 1 -->
+        <mat-step [completed]="rdvForm.controls['medecin'].valid && rdvForm.controls['motif'].valid">
+          <ng-template matStepLabel>{{ 'RDV_ETAPE1' | translate }}</ng-template>
+          <div class="rdv-step">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'RDV_MEDECIN' | translate }}</mat-label>
+              <mat-select formControlName="medecin" (selectionChange)="onMedecinChange()" [disabled]="loadingMedecins">
+                <mat-option *ngIf="loadingMedecins" disabled>{{ 'RDV_CHARGEMENT' | translate }}</mat-option>
+                <mat-option *ngFor="let m of medecins" [value]="m.id">
+                  {{ 'RDV_DR' | translate }} {{m.nom}} ({{m.specialite}})
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'RDV_MOTIF' | translate }}</mat-label>
+              <mat-select formControlName="motif">
+                <mat-option *ngFor="let motif of motifs" [value]="motif.id">
+                  {{ motif.label | translate }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="rdv-actions">
+              <button mat-flat-button color="primary"
+                (click)="nextStep()"
+                [disabled]="!rdvForm.controls['medecin'].valid || !rdvForm.controls['motif'].valid">
+                {{ 'SUIVANT' | translate }}
+              </button>
+            </div>
+          </div>
+        </mat-step>
+        <!-- Étape 2 -->
+        <mat-step [completed]="rdvForm.controls['date'].valid && rdvForm.controls['creneau'].valid">
+          <ng-template matStepLabel>{{ 'RDV_ETAPE2' | translate }}</ng-template>
+          <div class="rdv-step">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'RDV_DATE' | translate }}</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="date" (dateChange)="onDateChange($event.value)" autocomplete="off">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'RDV_CRENEAU' | translate }}</mat-label>
+              <mat-select formControlName="creneau" [disabled]="loadingCreneaux || !creneaux.length">
+                <mat-option *ngIf="loadingCreneaux" disabled>{{ 'RDV_CHARGEMENT' | translate }}</mat-option>
+                <mat-option *ngFor="let c of creneaux" [value]="c">{{c}}</mat-option>
+                <mat-option *ngIf="!loadingCreneaux && !creneaux.length" disabled>{{ 'RDV_AUCUN_CRENEAU' | translate }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="rdv-actions">
+              <button mat-stroked-button color="primary" (click)="prevStep()">{{ 'PRECEDENT' | translate }}</button>
+              <button mat-flat-button color="primary"
+                (click)="nextStep()"
+                [disabled]="!rdvForm.controls['date'].valid || !rdvForm.controls['creneau'].valid">
+                {{ 'SUIVANT' | translate }}
+              </button>
+            </div>
+          </div>
+        </mat-step>
+        <!-- Étape 3 -->
+        <mat-step>
+          <ng-template matStepLabel>{{ 'RDV_ETAPE3' | translate }}</ng-template>
+          <div class="rdv-step">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'RDV_COMMENTAIRE' | translate }}</mat-label>
+              <textarea matInput formControlName="commentaire" rows="3" maxlength="350"></textarea>
+            </mat-form-field>
+            <div class="rdv-upload">
+              <label for="piece-jointe">
+                <mat-icon>attach_file</mat-icon>
+                {{ 'RDV_PJ' | translate }}
+              </label>
+              <input type="file" #fileInput id="piece-jointe" (change)="onFileSelected($event)" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" />
+              <div *ngIf="pieceJointe" class="rdv-file">
+                <mat-icon>insert_drive_file</mat-icon>
+                {{pieceJointe.name}}
+                <button mat-icon-button color="warn" (click)="removeFile()" matTooltip="{{ 'RETIRER_FICHIER' | translate }}">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </div>
+            </div>
+            <div class="rdv-actions">
+              <button mat-stroked-button color="primary" (click)="prevStep()">{{ 'PRECEDENT' | translate }}</button>
+              <button mat-flat-button color="primary" (click)="submit()" [disabled]="saving">
+                {{ 'ENVOYER_DEMANDE' | translate }}
+              </button>
+            </div>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </form>
+    <div class="rdv-loading" *ngIf="saving">
+      <mat-spinner diameter="42"></mat-spinner> {{ 'RDV_ENREGISTREMENT' | translate }}
+    </div>
+    <mat-card class="rdv-success" *ngIf="success">
+      <mat-icon color="primary" class="big-ico">check_circle</mat-icon>
+      <h3>{{ 'RDV_CONFIRME' | translate }}</h3>
+      <div *ngIf="confirmation">
+        <p><b>{{ 'RDV_MEDECIN' | translate }} :</b> {{ 'RDV_DR' | translate }} {{confirmation.medecin.nom}} ({{confirmation.medecin.specialite}})</p>
+        <p><b>{{ 'RDV_DATE' | translate }} :</b> {{confirmation.date | date:'fullDate'}} {{ 'A' | translate }} {{confirmation.creneau}}</p>
+        <p><b>{{ 'RDV_MOTIF' | translate }} :</b> {{confirmation.motif.label | translate}}</p>
+        <p *ngIf="confirmation.commentaire"><b>{{ 'RDV_COMMENTAIRE' | translate }} :</b> {{confirmation.commentaire}}</p>
+        <p *ngIf="confirmation.pieceJointe"><b>{{ 'RDV_FICHIER_JOINT' | translate }} :</b> {{confirmation.pieceJointe}}</p>
+      </div>
+      <button mat-raised-button color="primary" (click)="resetAll()">
+        {{ 'RDV_NOUVEAU' | translate }}
+      </button>
+    </mat-card>
+  </mat-card>
+</div>

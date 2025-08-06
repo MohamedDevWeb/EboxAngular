@@ -1,0 +1,19 @@
+<div class="partages-container">
+  <mat-card class="partages-header">
+    <h1>
+      <mat-icon>folder_shared</mat-icon>
+      {{ 'PARTAGES.TITLE' | translate }}
+    </h1>
+    <p>{{ 'PARTAGES.SLOGAN' | translate }}</p>
+  </mat-card>
+  <div class="partages-list">
+    <mat-card class="partage-item" *ngFor="let item of [1,2]">
+      <mat-icon>person</mat-icon>
+      <div>
+        <h2>{{ ('PARTAGES.ITEM_' + item) | translate }}</h2>
+        <p>{{ ('PARTAGES.ITEM_DESC_' + item) | translate }}</p>
+      </div>
+    </mat-card>
+  </div>
+</div>
+

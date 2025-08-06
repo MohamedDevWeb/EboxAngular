@@ -1,0 +1,19 @@
+<div class="simulate-container">
+  <div class="card">
+    <img src="../../assets/eid.png" alt="eID" class="logo-eid" />
+    <h2>{{ 'LOGIN_EID_TITLE' | translate }}</h2>
+    <ng-container [ngSwitch]="step">
+      <div *ngSwitchCase="'insert'">
+        <p>{{ 'LOGIN_EID_INSERT_CARD' | translate }}</p>
+        <button (click)="simulateEid()" class="btn">{{ 'LOGIN_EID_CONTINUE' | translate }}</button>
+      </div>
+      <div *ngSwitchCase="'waiting'">
+        <p>{{ 'LOGIN_EID_READING' | translate }}</p>
+        <div class="spinner"></div>
+      </div>
+      <div *ngSwitchCase="'done'">
+        <p class="success">{{ 'LOGIN_EID_DONE' | translate }}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

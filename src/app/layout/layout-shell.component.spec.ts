@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-layout-shell',
+  templateUrl: './layout-shell.component.html',
+  styleUrls: ['./layout-shell.component.scss'],
+  standalone: true
+})
+export class LayoutShellComponent {
+  currentYear: number = new Date().getFullYear();
+}

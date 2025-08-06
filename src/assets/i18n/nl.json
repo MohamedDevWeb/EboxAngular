@@ -1,0 +1,322 @@
+{
+  "DASHBOARD": "Dashboard",
+  "MES_DOCUMENTS": "Mijn documenten",
+  "ANALYSES_EXAMENS": "Analyses & Onderzoeken",
+  "PRENDRE_RDV": "Afspraak maken",
+  "GUIDE_SANTE": "Gezondheidswijzer",
+  "NOTIFICATIONS": "Meldingen",
+  "CHAT_IA": "AI-chat",
+  "PROFIL": "Profiel",
+  "CONTACT": "Contact & Support",
+  "PARAMETRES": "Instellingen",
+  "HISTORIQUE": "Medische geschiedenis",
+
+  "ACCUEIL_TITLE": "Welkom bij eBox Santé+",
+  "ACCUEIL_SUBTITLE": "Uw digitale gezondheidsruimte in Brussel",
+  "ACCUEIL_CTA_DOCS": "Ga naar mijn documenten",
+  "ACCUEIL_CTA_ANALYSES": "Bekijk mijn analyses",
+  "ACCUEIL_CTA_RDV": "Afspraak maken",
+  "ACCUEIL_A_PROPOS": "Over",
+  "ACCUEIL_A_PROPOS_DESC": "Uw gezondheid, uw ruimte, uw veiligheid.",
+  "ACCUEIL_LEARN_MORE": "Meer weten",
+  "ACCUEIL_PARTENAIRES": "Partners",
+  "ACCUEIL_SECU": "Beschermde gegevens, 100% veilige toegang.",
+
+  "FOOTER_COPY": "&copy; {{year}} eBox Santé+ – Demoproject",
+
+  "SIDEBAR": {
+    "ACCUEIL": "Startpagina",
+    "DOCS": "Mijn documenten",
+    "ANALYSES": "Medische analyses",
+    "RDV": "Afspraak maken",
+    "NOTIFS": "Meldingen",
+    "CHATBOT": "Chatbot",
+    "PROFIL": "Profiel",
+    "CONTACT": "Contact",
+    "LOGOUT": "Afmelden"
+  },
+
+  "SIDEBAR_ACCUEIL": "Startpagina",
+  "SIDEBAR_MES_DOCUMENTS": "Mijn documenten",
+  "SIDEBAR_ANALYSES": "Medische analyses",
+  "SIDEBAR_PRENDRE_RDV": "Afspraak maken",
+  "SIDEBAR_NOTIFICATIONS": "Meldingen",
+  "SIDEBAR_CHATBOT": "Chatbot",
+  "SIDEBAR_PROFIL": "Profiel",
+  "SIDEBAR_CONTACT": "Contact",
+  "SIDEBAR_DECONNEXION": "Afmelden",
+
+  "LAYOUT": {
+    "SEARCH_PLACEHOLDER": "Zoeken (bv. voorschrift, analyse...)",
+    "LOGOUT": "Afmelden",
+    "DEMO_PROJECT": "Demoproject"
+  },
+  "SEARCH": "Zoeken (bv. voorschrift, analyse...)",
+  "RECHERCHE_PLACEHOLDER": "Zoeken (bv. voorschrift, analyse...)",
+
+  "DOCS": {
+    "TITLE": "Mijn documenten",
+    "UPLOAD": "Document toevoegen",
+    "SEARCH": "Zoeken (naam, type, arts...)",
+    "TYPE": "Documenttype",
+    "ALL": "Alle types",
+    "ORDONNANCE": "Voorschrift",
+    "RADIO": "Röntgenfoto",
+    "ANALYSE": "Analyse",
+    "LETTRE": "Brief",
+    "NOUVEAU": "Nieuw"
+  },
+ "MESDOCS_TITRE": "Mijn medische documenten",
+"MESDOCS_AJOUTER": "Document toevoegen",
+"MESDOCS_SEARCH": "Zoeken (naam, type, arts...)",
+"MESDOCS_ALL_TYPES": "Alle types",
+"MESDOCS_ANALYSE": "Analyse",
+"MESDOCS_ORDONNANCE": "Voorschrift",
+"MESDOCS_RADIO": "Röntgenfoto",
+"MESDOCS_LETTRE": "Brief",
+"MESDOCS_NOUVEAU": "Nieuw",
+
+
+
+  "PROFIL_TITRE": "Profiel",
+  "PROFIL_DECONNEXION": "Afmelden",
+  "PRENOM": "Voornaam",
+  "NOM": "Naam",
+  "EMAIL": "E-mail",
+  "GROUPE_SANGUIN": "Bloedgroep",
+  "MUTUELLE": "Mutualiteit",
+  "ALLERGIES": "Allergieën",
+  "ENREGISTRER": "Opslaan",
+  "ANNULER": "Annuleren",
+  "MODIFIER": "Bewerken",
+  "NUMERO_INAMI": "INAMI-nummer",
+  "VACCINATION": "Vaccinatie",
+  "A_JOUR": "Up-to-date",
+  "AUCUNE": "Geen",
+  "MEDECIN_TRAITANT": "Behandelende arts",
+  "TELECHARGER_ATTESTATION": "Attest downloaden",
+  "EXPORT_RGPD": "Mijn GDPR-gegevens exporteren",
+  "SUPPRIMER_COMPTE": "Mijn account verwijderen",
+  "MOT_DE_PASSE": "Wachtwoord",
+  "2FA_ACTIVE": "Twee-factor authenticatie actief",
+  "THEME": "Thema",
+  "SOMBRE": "Donker",
+  "CLAIR": "Licht",
+  "DERNIERES_CONNEXIONS": "Laatste verbindingen",
+  "CHARGEMENT_PROFIL": "Profiel wordt geladen...",
+  "PATIENT": "Patiënt",
+  "MÉDECIN": "Arts",
+  "MEDECIN": "Arts",
+  "ACTIF": "Actief",
+  "INACTIF": "Inactief",
+  "SUCCES_CONNEXION": "Succesvolle verbinding",
+  "ECHEC_CONNEXION": "Mislukte verbinding",
+
+  "NOTIF_TITRE": "Meldingen",
+  "NOTIF_UNREAD": "Ongelezen",
+  "NOTIF_UNREAD_PLURAL": "Ongelezen",
+  "NOTIF_MARK_AS_READ": "Markeren als gelezen",
+  "NOTIF_MARK_AS_UNREAD": "Markeren als ongelezen",
+  "NOTIF_DELETE": "Verwijderen",
+  "NOTIF_TOUTES": "Alle",
+  "NOTIF_INFOS": "Info",
+  "NOTIF_URGENCES": "Dringend",
+  "NOTIF_RAPPELS": "Herinneringen",
+  "NOTIF_PARTAGES": "Gedeeld",
+  "NOTIF_LOADING": "Meldingen laden...",
+  "NOTIF_EMPTY": "Geen meldingen op dit moment.",
+  "NOTIF_FILTER_UNREAD": "Toon enkel ongelezen",
+  "NOTIF_CLEAR_ALL": "Alles verwijderen",
+
+  "NOTIF_URGENCE_TITRE": "Dringend: kritisch resultaat",
+  "NOTIF_URGENCE_MSG": "Een analyseresultaat vereist onmiddellijke aandacht.",
+  "NOTIF_INFO_TITRE": "Nieuwe informatie",
+  "NOTIF_INFO_MSG": "Ontdek de nieuwe eBox Santé+-interface, nu beschikbaar!",
+  "NOTIF_PARTAGE_TITRE": "Gedeeld document",
+"NOTIF_PARTAGE_MESSAGE": "Uw arts heeft een nieuwe bloedanalyse gedeeld.",
+"NOTIF_RAPPEL_TITRE": "Herinnering: afspraak",
+"NOTIF_RAPPEL_MESSAGE": "U heeft morgen om 14u een afspraak met Dr. Martin.",
+"NOTIF_PARTAGE_MSG": "Uw arts heeft een nieuwe bloedanalyse gedeeld.",
+"NOTIF_RAPPEL_MSG": "U heeft morgen om 14u een afspraak met Dr. Martin.",
+"FAQ_DOC_DUPLICATA": "Hoe krijg ik een duplicaat van een medisch document?",
+"FAQ_DOC_DUPLICATA_REP": "U kunt een duplicaat aanvragen bij uw arts of via het documentengedeelte.",
+"FAQ_RDV_MEDECIN": "Hoe maak ik een afspraak met een partnerarts?",
+"FAQ_RDV_MEDECIN_REP": "Gebruik de sectie Afspraak maken om toegang te krijgen tot de agenda van onze partners.",
+"FAQ_PERTE_ACCES": "Wat te doen bij verlies van toegang tot mijn account?",
+"FAQ_PERTE_ACCES_REP": "Klik op ‘Wachtwoord vergeten’ of neem contact op met onze support.",
+"FAQ_PROTECTION_DONNEES": "Zijn mijn gegevens beschermd?",
+"FAQ_PROTECTION_DONNEES_REP": "Ja, al uw gegevens worden gehost en beveiligd in België.",
+"FAQ_ENVOI_EMAIL": "Kan ik mijn vragen per e-mail sturen?",
+"FAQ_ENVOI_EMAIL_REP": "Ja, neem contact met ons op via support@eboxsanteplus.be.",
+"LOGIN_FLUX_CHOOSE": "Kies uw profiel",
+"LOGIN_FLUX_CITOYEN": "Burger",
+"LOGIN_FLUX_ENTREPRISE": "Onderneming",
+"LOGIN_FLUX_PRO": "Professional",
+"LOGIN_FLUX_COLLAB": "Medewerker login",
+ "LOGIN_FLUX_CHOOSE": "Kies uw profiel",
+  "LOGIN_FLUX_CITOYEN": "Burger",
+  "LOGIN_FLUX_ENTREPRISE": "Onderneming",
+  "LOGIN_FLUX_PRO": "Professional",
+  "LOGIN_FLUX_COLLAB": "Medewerker login",
+   "RDV_CONSULTATION_GENERALE": "Algemeen consult",
+  "RDV_RENOUVELLEMENT_ORDONNANCE": "Vernieuwing voorschrift",
+  "RDV_RESULTATS_ANALYSE": "Analyseresultaten",
+  "RDV_SUIVI_TRAITEMENT": "Opvolging behandeling",
+  "RDV_URGENCE_LEGERE": "Lichte urgentie",
+
+  "LOGIN_AUTH_IDENT_ADMIN": "Beheerder identificatie",
+  "LOGIN_AUTH_TITLE": "Identificatiemethode",
+  "LOGIN_AUTH_IDENTIFICATION": "Identificatie",
+  "LOGIN_AUTH_WITH_EID": "Met eID-kaart",
+  "LOGIN_AUTH_WITH_ITSME": "Met itsme®",
+  "LOGIN_AUTH_CREATE_ITSME": "Maak een itsme® account aan",
+  "LOGIN_AUTH_WITH_EMAIL": "Met beveiligde e-mail",
+  "LOGIN_AUTH_WITH_MOBILE": "Met mobiele applicatie",
+  "LOGIN_AUTH_WITH_EUROPE": "Met Europese identificatie",
+  "LOGIN_AUTH_HELP": "Hulp nodig?",
+    "MESDOC_SANG": "Bloedonderzoek",
+  "MESDOC_IRM": "MRI",
+  "MESDOC_RADIO": "Röntgenfoto",
+  "MESDOC_ECG": "ECG",
+  "MESDOC_ORL": "KNO-onderzoek",
+  "MESDOC_AUTRE": "Ander document",
+
+  "ANALYSE_SANG": "Bloedonderzoek",
+  "ANALYSE_URINE": "Urineonderzoek",
+  "IRM_CRANE": "MRI van de hersenen",
+  "IRM_ABDOMEN": "MRI van de buik",
+  "RADIO_POUX": "Röntgenfoto van de longen",
+  "ECG_REPOS": "ECG in rust",
+  "BILAN_HEPATIQUE": "Leveronderzoek",
+  "BILAN_CARDIAQUE": "Hartonderzoek",
+
+  "DOC_TYPE_SANG": "Bloedanalyse",
+  "DOC_TYPE_IRM": "Magnetische resonantiebeeldvorming",
+  "DOC_TYPE_RADIO": "Röntgenfoto",
+  "DOC_TYPE_ECG": "Elektrocardiogram",
+  "DOC_TYPE_AUTRE": "Ander document",
+
+  "LOGIN_ITSME_TITLE": "itsme® login",
+  "LOGIN_ITSME_QR_DESC": "Scan de QR-code met de itsme® app om verder te gaan.",
+  "LOGIN_ITSME_WAITING": "Uw itsme®-identiteit wordt gecontroleerd...",
+  "LOGIN_ITSME_SUCCESS": "itsme® authenticatie geslaagd.",
+
+  "LOGIN_EID_TITLE": "eID login",
+  "LOGIN_EID_INSERT_CARD": "Steek uw eID-kaart in de lezer.",
+  "LOGIN_EID_CONTINUE": "Doorgaan",
+  "LOGIN_EID_READING": "eID-kaart wordt gelezen...",
+  "LOGIN_EID_DONE": "eID login geslaagd.",
+
+  "LOGIN_EMAIL_TITLE": "Beveiligde e-mail login",
+  "LOGIN_EMAIL_CODE_SENT": "Er is een beveiligingscode naar uw e-mailadres gestuurd.",
+  "LOGIN_EMAIL_PLACEHOLDER": "Voer de ontvangen code in",
+  "LOGIN_EMAIL_VALIDATE": "Valideren",
+  "LOGIN_EMAIL_CHECKING": "Code wordt gecontroleerd...",
+  "LOGIN_EMAIL_DONE": "E-mail login geslaagd.",
+
+  "LOGIN_MOBILE_TITLE": "Mobiele login",
+  "LOGIN_MOBILE_CODE_DESC": "Er is een code naar uw mobiele applicatie gestuurd.",
+  "LOGIN_MOBILE_CODE_HINT": "Voer de 6-cijferige code in om verder te gaan.",
+  "LOGIN_MOBILE_WAITING": "Mobiele code wordt gecontroleerd...",
+  "LOGIN_MOBILE_SUCCESS": "Mobiele login geslaagd.",
+  "VALIDATE": "Valideren",
+
+  "LOGIN_EU_TITLE": "Europese login",
+  "LOGIN_EU_WAITING": "Doorverwijzing naar Europese identificatie...",
+  "LOGIN_EU_DONE": "Europese login geslaagd.",
+
+  "LOGIN_REDIRECT_IN_PROGRESS": "Login wordt uitgevoerd...",
+  "LOGIN_REDIRECT_WAIT": "Even geduld tijdens de doorverwijzing.",
+
+  "CONTINUE": "Doorgaan",
+
+
+
+
+
+
+
+
+  "DOCS_BOUTON_VOIR": "Bekijken",
+
+  "SEARCH": "Zoeken (bv. voorschrift, analyse...)",
+
+
+
+
+  "ANALYSES_TITRE": "Analyses & Onderzoeken",
+  "ANALYSES_DESCRIPTION": "Bekijk uw analyseresultaten.",
+  "ANALYSES_TELECHARGER": "Downloaden",
+  "ANALYSES_RESULT_PENDING": "Resultaat in afwachting",
+
+  "RDV_TITRE": "Maak een medische afspraak",
+  "RDV_ETAPE1": "Selectie",
+  "RDV_ETAPE2": "Datum & tijd",
+  "RDV_ETAPE3": "Aanvullende info",
+  "RDV_MEDECIN": "Arts",
+  "RDV_MOTIF": "Reden afspraak",
+  "RDV_SUIVANT": "Volgende",
+
+
+
+
+"CONTACT": {
+  "TITLE": "Contact & Support",
+  "SLOGAN": "Hulp nodig? Contacteer ons!",
+  "FORM_TITLE": "Contactformulier",
+  "NAME": "Volledige naam",
+  "EMAIL": "E-mail",
+  "PHONE": "Telefoon",
+  "SUBJECT": "Onderwerp",
+  "MESSAGE": "Uw bericht",
+  "ATTACH": "Bestand toevoegen",
+  "CONSENT": "Ik ga akkoord dat mijn gegevens gebruikt worden voor support",
+  "SEND": "Verzenden",
+  "RESET": "Resetten",
+  "LIVE_CHAT": "Contacteer de live chat",
+  "QUICK_SUPPORT": "Snelle ondersteuning",
+  "ADDRESS": "Gezondheidslaan 15, 1000 Brussel",
+  "FAQ": "Veelgestelde vragen",
+  "THANKS": "Bedankt, uw aanvraag is verzonden. Wij nemen binnen 24 uur contact met u op.",
+  "INTRO": "Ons supportteam antwoordt van maandag tot zaterdag.",
+  "INTRO2": "Contacteer ons via e-mail, telefoon of dit formulier.",
+
+
+  "ANALYSES": "Medische analyse",
+
+  "LANG": {
+    "FR": "Frans",
+    "NL": "Nederlands"
+  }
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

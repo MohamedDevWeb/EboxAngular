@@ -1,0 +1,32 @@
+.partages-container {
+  margin: 3.2rem auto 0 auto;
+  max-width: 700px;
+  .partages-header {
+    background: #f0f7ff;
+    border-radius: 1.15em;
+    padding: 2.2rem 2rem 1.6rem 2rem;
+    text-align: center;
+    h1 { color: #005288; font-size: 2.1rem; display: flex; align-items: center; gap: 0.7rem; }
+    p { color: #444; font-size: 1.13rem; margin-bottom: 1.1rem; }
+  }
+  .partages-list {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    .partage-item {
+      display: flex;
+      gap: 1.1rem;
+      align-items: flex-start;
+      background: #e0f7fa;
+      border-radius: 1em;
+      padding: 1.1em 1.2em;
+      mat-icon { color: #00adef; font-size: 2.1rem; margin-top: 0.25em; }
+      h2 { margin: 0 0 0.13em 0; font-size: 1.09rem; color: #005288; }
+      p { color: #555; font-size: 0.95rem; margin-bottom: 0.5em; }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .partages-container { max-width: 99vw; }
+}

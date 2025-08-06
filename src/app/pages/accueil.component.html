@@ -1,0 +1,48 @@
+<div class="accueil-main-bg">
+  <div class="hero-banner">
+    <div class="hero-content">
+      <h1>{{ 'ACCUEIL_TITLE' | translate }}</h1>
+      <p class="hero-sub">{{ 'ACCUEIL_SUBTITLE' | translate }}</p>
+      <div class="hero-cta-row">
+        <button class="cta cta-docs" (click)="go('/mes-documents')">
+          <span class="icon"><mat-icon>description</mat-icon></span>
+          {{ 'ACCUEIL_CTA_DOCS' | translate }}
+        </button>
+        <button class="cta cta-analyses" (click)="go('/analyses-examens')">
+          <span class="icon"><mat-icon>science</mat-icon></span>
+          {{ 'ACCUEIL_CTA_ANALYSES' | translate }}
+        </button>
+        <button class="cta cta-rdv" (click)="go('/prendre-rdv')">
+          <span class="icon"><mat-icon>calendar_today</mat-icon></span>
+          {{ 'ACCUEIL_CTA_RDV' | translate }}
+        </button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="../../assets/logoooo.png" alt="Santé Bruxelles" />
+    </div>
+  </div>
+
+  <div class="accueil-section section-bloc">
+    <div class="about-card">
+      <h2><mat-icon>info</mat-icon> {{ 'ACCUEIL_A_PROPOS' | translate }}</h2>
+      <p>{{ 'ACCUEIL_A_PROPOS_DESC' | translate }}</p>
+      <a class="learn-more" routerLink="/guide">{{ 'ACCUEIL_LEARN_MORE' | translate }}</a>
+    </div>
+    <div class="partners-card">
+      <h2><mat-icon>groups</mat-icon> {{ 'ACCUEIL_PARTENAIRES' | translate }}</h2>
+      <div class="partners-list">
+        <a href="https://www.inami.fgov.be/fr" target="_blank" class="partner inami">INAMI</a>
+        <a href="https://www.sciensano.be/" target="_blank" class="partner sciensano">Sciensano</a>
+        <a href="https://www.masante.belgique.be" target="_blank" class="partner masante">MaSanté</a>
+        <a href="https://www.belgium.be/fr/sante" target="_blank" class="partner belgium">Belgium.be</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="accueil-footer">
+    <span>
+      <mat-icon>lock</mat-icon> {{ 'ACCUEIL_SECU' | translate }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.guide-container {
+  max-width: 640px;
+  margin: 2.3rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+  width: 100%;
+}
+.guide-header {
+  background: #fff;
+  border-radius: 1.1em;
+  box-shadow: 0 3px 15px #00528815;
+  padding: 2.2rem 2rem 1.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  h1 {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    gap: 0.6rem;
+    color: #005288;
+    .material-icons { color: #00ADEF; font-size: 2.2rem; }
+  }
+  p { color: #444; font-size: 1.09rem; margin-bottom: 0.2rem; }
+}
+.guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.guide-card {
+  background: #f5faff;
+  border-radius: 1em;
+  box-shadow: 0 2px 10px #0052880a;
+  display: flex;
+  gap: 1.1em;
+  align-items: flex-start;
+  padding: 1.15em 1.4em;
+  mat-icon { color: #00ADEF; font-size: 2.2em; margin-top: 0.2em; }
+  .guide-txt {
+    .guide-title { color: #005288; font-weight: 700; font-size: 1.14em; margin-bottom: 0.2em; }
+    .guide-desc { color: #444; font-size: 1.01em; }
+  }
+}
+@media (max-width: 650px) {
+  .guide-container { padding: 0 0.3rem; }
+  .guide-header { padding: 1.1rem 0.6rem 1.1rem 0.6rem; }
+}

@@ -1,0 +1,118 @@
+<div class="contact-support-root">
+  <mat-card class="cs-header">
+    <mat-icon class="cs-bigicon">support_agent</mat-icon>
+    <div>
+      <h1>{{ 'CONTACT.TITLE' | translate }}</h1>
+      <p>
+        {{ 'CONTACT.INTRO' | translate }}<br>
+        {{ 'CONTACT.INTRO2' | translate }}
+      </p>
+    </div>
+  </mat-card>
+
+  <div class="cs-flex">
+    <!-- Bloc formulaire -->
+    <mat-card class="cs-form-card">
+      <form #contactForm="ngForm" (ngSubmit)="submitForm()" autocomplete="off">
+        <h2>{{ 'CONTACT.FORM_TITLE' | translate }}</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'CONTACT.NAME' | translate }}</mat-label>
+          <input matInput name="nom" [(ngModel)]="form.nom" required autocomplete="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'CONTACT.EMAIL' | translate }}</mat-label>
+          <input matInput name="email" type="email" [(ngModel)]="form.email" required autocomplete="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'CONTACT.PHONE' | translate }}</mat-label>
+          <input matInput name="telephone" [(ngModel)]="form.telephone" autocomplete="tel">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'CONTACT.SUBJECT' | translate }}</mat-label>
+          <mat-select name="sujet" [(ngModel)]="form.sujet" required>
+            <mat-option *ngFor="let opt of sujetOptions" [value]="opt">{{ opt | translate }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'CONTACT.MESSAGE' | translate }}</mat-label>
+          <textarea matInput name="message" [(ngModel)]="form.message" required rows="5"></textarea>
+        </mat-form-field>
+        <div class="cs-upload">
+          <input #fileUpload type="file" id="cs-file-upload" style="display:none" (change)="onFileSelected($event)">
+          <button mat-stroked-button color="primary" type="button" (click)="uploadTrigger()" [disabled]="loading">
+            <mat-icon>attach_file</mat-icon>
+            {{ 'CONTACT.ATTACH' | translate }}
+          </button>
+          <span *ngIf="fileName" class="cs-filename">{{fileName}}</span>
+        </div>
+        <div class="cs-consent">
+          <input type="checkbox" id="consent" [(ngModel)]="form.consent" name="consent" required>
+          <label for="consent">{{ 'CONTACT.CONSENT' | translate }}</label>
+        </div>
+        <div class="cs-actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+            <mat-icon>send</mat-icon>
+            {{ 'CONTACT.SEND' | translate }}
+            <mat-progress-spinner *ngIf="loading" mode="indeterminate" diameter="18"></mat-progress-spinner>
+          </button>
+          <button mat-stroked-button color="warn" type="button" (click)="resetForm()" [disabled]="loading">
+            <mat-icon>restart_alt</mat-icon> {{ 'CONTACT.RESET' | translate }}
+          </button>
+        </div>
+        <div *ngIf="error" class="cs-error">{{error}}</div>
+        <div *ngIf="sent" class="cs-sent">✅ {{ 'CONTACT.THANKS' | translate }}</div>
+      </form>
+    </mat-card>
+
+    <!-- Bloc infos/FAQ/Live -->
+    <mat-card class="cs-info-card">
+      <h2>{{ 'CONTACT.QUICK_SUPPORT' | translate }}</h2>
+      <div class="cs-contacts">
+        <div class="cs-contact">
+          <mat-icon>email</mat-icon>
+          <a href="mailto:support&#64;eboxsanteplus.be">support&#64;eboxsanteplus.be</a>
+        </div>
+        <div class="cs-contact">
+          <mat-icon>call</mat-icon>
+          <a href="tel:+3221234567">+32 2 123 45 67</a>
+        </div>
+        <div class="cs-contact">
+          <mat-icon>map</mat-icon>
+          <a href="#" (click)="openMap(); $event.preventDefault()">{{ 'CONTACT.ADDRESS' | translate }}</a>
+        </div>
+        <div class="cs-contact">
+          <mat-icon>schedule</mat-icon>
+          <span>
+            <span *ngFor="let h of horaires">{{ h.jours | translate }} : {{ h.heures }}<br></span>
+          </span>
+        </div>
+        <div class="cs-contact">
+          <mat-icon>language</mat-icon>
+          <a href="https://eboxsanteplus.be" target="_blank">eboxsanteplus.be</a>
+        </div>
+      </div>
+      <div class="cs-socials">
+        <a href="https://www.facebook.com/" target="_blank" matTooltip="Facebook"><mat-icon>facebook</mat-icon></a>
+        <a href="https://www.linkedin.com/" target="_blank" matTooltip="LinkedIn"><mat-icon>linkedin</mat-icon></a>
+        <a href="https://twitter.com/" target="_blank" matTooltip="Twitter"><mat-icon>twitter</mat-icon></a>
+      </div>
+      <hr>
+      <div class="cs-livechat">
+        <button mat-flat-button color="accent" (click)="openLiveChat()" [disabled]="loading">
+          <mat-icon>forum</mat-icon> {{ 'CONTACT.LIVE_CHAT' | translate }}
+        </button>
+      </div>
+      <hr>
+      <h2>{{ 'CONTACT.FAQ' | translate }}</h2>
+      <div class="cs-faq">
+        <div *ngFor="let item of faq; let i = index" class="cs-faq-item">
+          <button type="button" class="cs-faq-q" (click)="toggleFaq(i)" [attr.aria-expanded]="item.open">
+            <mat-icon>{{item.open ? 'expand_less' : 'expand_more'}}</mat-icon>
+            {{ item.question | translate }}
+          </button>
+          <div class="cs-faq-a" *ngIf="item.open">{{ item.answer | translate }}</div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

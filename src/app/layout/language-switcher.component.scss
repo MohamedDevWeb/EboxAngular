@@ -1,0 +1,23 @@
+.lang-switcher {
+  display: flex;
+  gap: 0.4em;
+  justify-content: flex-end;
+  margin-bottom: 0.5em;
+  &.top { margin-top: 0.8em; }
+  &.bottom { margin-bottom: 0.7em; }
+  button {
+    border: none;
+    background: #eaf3fd;
+    color: #16425e;
+    font-weight: 800;
+    font-size: 1.01em;
+    border-radius: 2.5em;
+    padding: 0.32em 1.21em;
+    transition: background 0.14s, color 0.14s;
+    cursor: pointer;
+    &.active, &:hover {
+      background: #174b8d;
+      color: #ffe34a;
+    }
+  }
+}

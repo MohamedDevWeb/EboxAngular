@@ -1,0 +1,25 @@
+<div class="simulate-container">
+  <div class="card">
+    <img src="../../assets/app.png" alt="Mobile" class="logo-mobile" />
+    <h2>{{ 'LOGIN_MOBILE_TITLE' | translate }}</h2>
+    <ng-container [ngSwitch]="step">
+      <div *ngSwitchCase="'code'">
+        <p>
+          {{ 'LOGIN_MOBILE_CODE_DESC' | translate }}<br>
+          {{ 'LOGIN_MOBILE_CODE_HINT' | translate }}
+        </p>
+        <input type="text" maxlength="6" [(ngModel)]="code" class="input-code" placeholder="123456" />
+        <button [disabled]="code.length!==6" (click)="submitCode()" class="btn">
+          {{ 'VALIDATE' | translate }}
+        </button>
+      </div>
+      <div *ngSwitchCase="'waiting'">
+        <p>{{ 'LOGIN_MOBILE_WAITING' | translate }}</p>
+        <div class="spinner"></div>
+      </div>
+      <div *ngSwitchCase="'done'">
+        <p class="success">{{ 'LOGIN_MOBILE_SUCCESS' | translate }}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

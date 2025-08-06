@@ -1,0 +1,6 @@
+<div *ngIf="pdfUrl; else noDocument">
+  <ngx-extended-pdf-viewer [src]="pdfUrl" useBrowserLocale="true" height="80vh"></ngx-extended-pdf-viewer>
+</div>
+<ng-template #noDocument>
+  <p class="text-gray-500">Veuillez sélectionner un document.</p>
+</ng-template>

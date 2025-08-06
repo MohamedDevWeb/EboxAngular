@@ -1,0 +1,32 @@
+<div class="simulate-container">
+  <div class="card">
+    <img src="../../assets/561127.png" alt="Email" class="logo-email" />
+    <h2>{{ 'LOGIN_EMAIL_TITLE' | translate }}</h2>
+    <ng-container [ngSwitch]="step">
+      <div *ngSwitchCase="'code'">
+        <p>{{ 'LOGIN_EMAIL_CODE_SENT' | translate }}</p>
+        <input
+          type="text"
+          maxlength="6"
+          [(ngModel)]="code"
+          class="input-code"
+          placeholder="{{ 'LOGIN_EMAIL_PLACEHOLDER' | translate }}"
+        />
+        <button
+          [disabled]="code.length!==6"
+          (click)="submitCode()"
+          class="btn"
+        >
+          {{ 'LOGIN_EMAIL_VALIDATE' | translate }}
+        </button>
+      </div>
+      <div *ngSwitchCase="'waiting'">
+        <p>{{ 'LOGIN_EMAIL_CHECKING' | translate }}</p>
+        <div class="spinner"></div>
+      </div>
+      <div *ngSwitchCase="'done'">
+        <p class="success">{{ 'LOGIN_EMAIL_DONE' | translate }}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

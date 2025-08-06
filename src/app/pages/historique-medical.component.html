@@ -1,0 +1,23 @@
+<div class="historique-container">
+  <mat-card class="historique-header">
+    <h1>
+      <span class="material-icons">history</span>
+      {{ 'HISTORIQUE' | translate }}
+    </h1>
+    <p>{{ 'HISTORIQUE_DESC' | translate }}</p>
+  </mat-card>
+  <div class="historique-list">
+    <mat-card class="hist-card" *ngFor="let h of historique">
+      <mat-icon>{{ h.icon }}</mat-icon>
+      <div class="hist-txt">
+        <div class="hist-title">
+          {{ lang === 'fr' ? h.titreFr : h.titreNl }}
+        </div>
+        <div class="hist-desc">
+          {{ lang === 'fr' ? h.descFr : h.descNl }}
+        </div>
+        <div class="hist-date">{{ h.date }}</div>
+      </div>
+    </mat-card>
+  </div>
+</div>

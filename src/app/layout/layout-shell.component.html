@@ -1,0 +1,34 @@
+<div class="main-layout">
+  <app-sidebar></app-sidebar>
+  <div class="main-content">
+    <header class="main-header">
+      <div class="center">
+        <input
+          type="text"
+          [(ngModel)]="search"
+          (keydown.enter)="onSearch()"
+          [placeholder]="'SEARCH' | translate"
+        />
+        <button mat-mini-fab color="primary" (click)="onSearch()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+      <div class="right">
+        <app-language-switcher></app-language-switcher>
+        <div class="user-profile" *ngIf="profil$ | async as profil">
+          <mat-icon>account_circle</mat-icon>
+          <span class="username">{{ profil.prenom }} {{ profil.nom }}</span>
+        </div>
+        <button class="logout-top" mat-icon-button (click)="logout()" title="Déconnexion">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <footer class="footer-admin">
+      &copy; {{ currentYear }} eBox Santé+ – Projet démonstration
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<mat-card class="analyses-header">
+  <mat-card-title>
+    <mat-icon>science</mat-icon>
+    {{ 'ANALYSES_TITRE' | translate }}
+  </mat-card-title>
+  <mat-card-subtitle>{{ 'ANALYSES_DESCRIPTION' | translate }}</mat-card-subtitle>
+</mat-card>
+
+<div class="analyses-list">
+  <mat-card class="analyse-card" *ngFor="let exam of examens">
+    <div class="analyse-row">
+      <div>
+        <mat-icon>description</mat-icon>
+        <span class="type">
+          {{ ('MESDOCS_' + exam.type.toUpperCase()) | translate }}
+        </span>
+      </div>
+      <span class="date">{{ exam.date }}</span>
+    </div>
+    <div class="actions">
+      <button *ngIf="exam.disponible"
+        mat-stroked-button color="primary">
+        <mat-icon>download</mat-icon>
+        {{ 'ANALYSES_TELECHARGER' | translate }}
+      </button>
+      <span *ngIf="!exam.disponible" class="not-ready">
+        <mat-icon>hourglass_empty</mat-icon>
+        {{ 'ANALYSES_RESULT_PENDING' | translate }}
+      </span>
+    </div>
+    <div class="filename">
+      <mat-icon>folder</mat-icon>
+      {{ exam.file }}
+    </div>
+  </mat-card>
+</div>

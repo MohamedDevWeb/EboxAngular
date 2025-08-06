@@ -1,0 +1,102 @@
+.mesdocs-root {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 0 4rem 0;
+}
+.mesdocs-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 1.6rem 2rem 1.3rem 2rem;
+  border-radius: 2rem;
+  margin-bottom: 1.7rem;
+  background: linear-gradient(90deg, #e6f1fc 0%, #e3f8f5 100%);
+  box-shadow: 0 6px 22px 0 rgba(30,80,150,0.10);
+  .md-title {
+    font-size: 1.45em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.55em;
+    color: #1976d2;
+  }
+  .md-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.1em;
+    flex-wrap: wrap;
+    width: 100%;
+    .md-search { min-width: 200px; flex: 1;}
+    mat-form-field { min-width: 180px;}
+    button { font-weight: 600; }
+  }
+}
+.mesdocs-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.45em;
+  margin-top: 1.5em;
+}
+.doc-card {
+  border-radius: 1.3em;
+  box-shadow: 0 2px 18px 0 rgba(45,90,140,0.10);
+  padding: 1.4em 1em 1.2em 1em;
+  transition: box-shadow .18s;
+  background: #fff;
+  &:hover { box-shadow: 0 6px 22px 0 rgba(30,80,150,0.17);}
+  .doc-row {
+    display: flex;
+    align-items: center;
+    gap: 1.1em;
+  }
+  .doc-icon {
+    font-size: 2.2em;
+    color: #2b98df;
+    &.Ordonnance { color: #81c784; }
+    &.Radio { color: #a77df0; }
+    &.Lettre { color: #fdc13f; }
+  }
+  .doc-info {
+    flex: 1;
+    .doc-nom {
+      font-size: 1.17em;
+      font-weight: 600;
+      color: #115c8d;
+    }
+    .doc-meta {
+      margin-top: 0.22em;
+      font-size: 1.04em;
+      color: #4f6a8f;
+      display: flex;
+      align-items: center;
+      gap: 1.1em;
+      .doc-type {
+        font-weight: 700; color: #2578d9;
+        margin-left: 0.2em;
+      }
+      .doc-new {
+        color: #e7484a; font-weight: 700; margin-left: 0.35em;
+      }
+      mat-icon { font-size: 1.09em; vertical-align: middle;}
+    }
+  }
+  .doc-actions {
+    display: flex; gap: 0.3em;
+    button { margin-right: 0.18em;}
+  }
+}
+.md-empty {
+  text-align: center; color: #6a97ca; font-size: 1.15em;
+  margin-top: 2.5em;
+  mat-icon { font-size: 2.5em;}
+}
+.md-loading {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1em; min-height: 320px;
+}
+@media (max-width: 700px) {
+  .mesdocs-root { padding: 0.8em 0.1em; }
+  .mesdocs-header { padding: 1.2em 0.3em;}
+  .doc-card { padding: 1em 0.5em;}
+}

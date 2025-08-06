@@ -1,0 +1,18 @@
+<div class="dashboard-container">
+  <mat-card class="dashboard-welcome">
+    <h1>{{ 'DASHBOARD_BIENVENUE' | translate }}</h1>
+    <p>{{ 'DASHBOARD_SLOGAN' | translate }}</p>
+  </mat-card>
+
+  <div class="dashboard-stats">
+    <mat-card class="dashboard-stat" *ngFor="let stat of ['DOCS', 'ANALYSES', 'NOTIFS', 'RDV']">
+      <mat-icon>
+        {{ stat === 'DOCS' ? 'folder_open' : stat === 'ANALYSES' ? 'assignment' : stat === 'NOTIFS' ? 'notifications' : 'event_available' }}
+      </mat-icon>
+      <div>
+        <h2>{{ ('DASHBOARD_STAT_' + stat) | translate }}</h2>
+        <p>{{ ('DASHBOARD_STAT_' + stat + '_DESC') | translate }}</p>
+      </div>
+    </mat-card>
+  </div>
+</div>

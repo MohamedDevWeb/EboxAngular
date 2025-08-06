@@ -1,0 +1,136 @@
+<div class="profil-root" *ngIf="!loading; else loadingTpl">
+  <mat-card class="profil-card">
+    <div class="profil-header">
+      <img [src]="profil?.avatar" class="profil-avatar" alt="avatar">
+      <div class="profil-identite">
+        <div class="profil-nom">
+          <span>{{ profil?.prenom }} {{ profil?.nom }}</span>
+          <mat-icon *ngIf="profil?.role==='Médecin'" class="badge-md">verified_user</mat-icon>
+          <mat-icon *ngIf="profil?.role==='Patient'" class="badge-patient">favorite</mat-icon>
+        </div>
+        <div class="profil-mail"><mat-icon>mail</mat-icon> {{ profil?.email }}</div>
+        <div class="profil-role">
+          <span class="statut">{{ profil?.role | translate }}</span>
+          <mat-icon *ngIf="profil?.status==='Actif'" color="primary">verified</mat-icon>
+        </div>
+      </div>
+      <button mat-mini-fab color="primary" (click)="toggleEdit()" [matTooltip]="editMode ? ('ANNULER' | translate) : ('MODIFIER' | translate)">
+        <mat-icon>{{editMode ? 'close' : 'edit'}}</mat-icon>
+      </button>
+    </div>
+
+    <div class="profil-sep"></div>
+
+    <form *ngIf="editMode && profil" class="edit-form" autocomplete="off">
+      <div class="edit-row">
+        <label>{{ 'PRENOM' | translate }}</label>
+        <input [(ngModel)]="profil.prenom" name="prenom" />
+        <label>{{ 'NOM' | translate }}</label>
+        <input [(ngModel)]="profil.nom" name="nom" />
+      </div>
+      <div class="edit-row">
+        <label>{{ 'EMAIL' | translate }}</label>
+        <input [(ngModel)]="profil.email" name="email" type="email" />
+      </div>
+      <div class="edit-row">
+        <label>{{ 'GROUPE_SANGUIN' | translate }}</label>
+        <input [(ngModel)]="profil.groupeSanguin" name="groupe" />
+        <label>{{ 'MUTUELLE' | translate }}</label>
+        <input [(ngModel)]="profil.mutuelle" name="mutuelle" />
+      </div>
+      <div class="edit-row">
+        <label>{{ 'ALLERGIES' | translate }}</label>
+        <input [(ngModel)]="profil.allergies" name="allergies" />
+      </div>
+      <div class="edit-row">
+        <button mat-flat-button color="primary" (click)="saveProfil()" type="button">{{ 'ENREGISTRER' | translate }}</button>
+        <button mat-stroked-button (click)="toggleEdit()" type="button">{{ 'ANNULER' | translate }}</button>
+      </div>
+    </form>
+
+    <div *ngIf="!editMode && profil" class="profil-infos">
+      <div>
+        <mat-icon>badge</mat-icon>
+        <span class="info-label">{{ 'NUMERO_INAMI' | translate }} :</span> {{ profil.inami || '-' }}
+      </div>
+      <div>
+        <mat-icon>water_drop</mat-icon>
+        <span class="info-label">{{ 'GROUPE_SANGUIN' | translate }} :</span> {{ profil.groupeSanguin || '-' }}
+      </div>
+      <div>
+        <mat-icon>vaccines</mat-icon>
+        <span class="info-label">{{ 'VACCINATION' | translate }} :</span> {{ profil.vaccination || ('A_JOUR' | translate) }}
+      </div>
+      <div>
+        <mat-icon>healing</mat-icon>
+        <span class="info-label">{{ 'ALLERGIES' | translate }} :</span> {{ profil.allergies || ('AUCUNE' | translate) }}
+      </div>
+      <div>
+        <mat-icon>medical_services</mat-icon>
+        <span class="info-label">{{ 'MEDECIN_TRAITANT' | translate }} :</span> {{ profil.medecin || '-' }}
+      </div>
+      <div>
+        <mat-icon>health_and_safety</mat-icon>
+        <span class="info-label">{{ 'MUTUELLE' | translate }} :</span> {{ profil.mutuelle || '-' }}
+        <a *ngIf="profil.mutuelleDoc" [href]="profil.mutuelleDoc" download>
+          <mat-icon matTooltip="{{ 'TELECHARGER_ATTESTATION' | translate }}">download</mat-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="profil-sep"></div>
+
+    <div class="profil-actions">
+      <button mat-stroked-button color="primary" (click)="exportData()">
+        <mat-icon>file_download</mat-icon> {{ 'EXPORT_RGPD' | translate }}
+      </button>
+      <button mat-stroked-button color="warn" (click)="deleteProfil()">
+        <mat-icon>delete_forever</mat-icon> {{ 'SUPPRIMER_COMPTE' | translate }}
+      </button>
+    </div>
+
+    <div class="profil-sep"></div>
+
+    <div class="profil-param">
+      <div>
+        <mat-icon>lock</mat-icon>
+        <span>{{ 'MOT_DE_PASSE' | translate }} :</span>
+        <input [type]="showPwd ? 'text' : 'password'" [value]="profil?.password" readonly />
+        <button mat-icon-button (click)="togglePwd()" type="button">
+          <mat-icon>{{showPwd ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </div>
+      <div>
+        <mat-icon>security</mat-icon>
+        <span>{{ '2FA_ACTIVE' | translate }} :</span> <mat-icon color="primary">verified</mat-icon>
+      </div>
+      <div>
+        <mat-icon>palette</mat-icon>
+        <span>{{ 'THEME' | translate }} :</span> <span>{{ isDarkMode ? ('SOMBRE' | translate) : ('CLAIR' | translate) }}</span>
+      </div>
+    </div>
+
+    <div class="profil-sep"></div>
+
+    <div class="profil-historique">
+      <div class="hist-title">
+        <mat-icon>history</mat-icon>
+        {{ 'DERNIERES_CONNEXIONS' | translate }}
+      </div>
+      <div *ngFor="let c of connexions" class="hist-row">
+        <mat-icon>login</mat-icon>
+        {{c.date | date:'short'}} — {{c.type | translate}}
+        <mat-icon *ngIf="c.succes" color="primary">check_circle</mat-icon>
+        <mat-icon *ngIf="!c.succes" color="warn">error</mat-icon>
+      </div>
+    </div>
+
+  </mat-card>
+</div>
+
+<ng-template #loadingTpl>
+  <div class="profil-loading">
+    <mat-spinner></mat-spinner>
+    <div>{{ 'CHARGEMENT_PROFIL' | translate }}</div>
+  </div>
+</ng-template>

@@ -1,0 +1,27 @@
+<div class="login-flux-bg">
+  <div class="login-flux-header">
+    <img src="../../assets/Belgium.be_logo.svg.png" alt="BRUBOX" class="flux-logo" />
+    <span class="flux-title">eBox Santé+ | Administration belge</span>
+    <!-- La langue est désormais gérée par le switcher global, pas ici -->
+  </div>
+  <div class="login-flux-card">
+    <h1>
+      {{ 'LOGIN_FLUX_CHOOSE' | translate }}
+    </h1>
+    <div class="login-flux-btns">
+      <button class="big-btn citoyen" (click)="select('citoyen')">
+        {{ 'LOGIN_FLUX_CITOYEN' | translate }}
+      </button>
+      <button class="big-btn entreprise" (click)="select('entreprise')">
+        {{ 'LOGIN_FLUX_ENTREPRISE' | translate }}
+      </button>
+      <button class="big-btn pro" (click)="select('professionnel')">
+        {{ 'LOGIN_FLUX_PRO' | translate }}
+      </button>
+    </div>
+    <div class="flux-csam">
+      <span>{{ 'LOGIN_FLUX_COLLAB' | translate }}</span>
+      <img src="../../assets/csam.jpg" alt="CSAM" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="notif-root">
+  <mat-card class="notif-header">
+    <div class="notif-h-left">
+      <mat-icon class="notif-icon-main">notifications</mat-icon>
+      <span class="notif-title">{{ 'NOTIF_TITRE' | translate }}</span>
+      <span class="notif-unread" *ngIf="getUnreadCount()">
+        <mat-chip color="primary">
+          {{ getUnreadCount() }}
+          {{ getUnreadCount() > 1 ? ('NOTIF_UNREAD_PLURAL' | translate) : ('NOTIF_UNREAD' | translate) }}
+        </mat-chip>
+      </span>
+    </div>
+    <div class="notif-h-actions">
+      <mat-form-field appearance="outline" class="notif-search">
+        <input matInput [placeholder]="'SEARCH' | translate" [(ngModel)]="search" (input)="applyFilter()">
+      </mat-form-field>
+      <mat-chip-listbox [(ngModel)]="typeFilter">
+        <mat-chip-option value="all">{{ 'NOTIF_TOUTES' | translate }}</mat-chip-option>
+        <mat-chip-option value="info">{{ 'NOTIF_INFOS' | translate }}</mat-chip-option>
+        <mat-chip-option value="urgent">{{ 'NOTIF_URGENCES' | translate }}</mat-chip-option>
+        <mat-chip-option value="rappel">{{ 'NOTIF_RAPPELS' | translate }}</mat-chip-option>
+        <mat-chip-option value="partage">{{ 'NOTIF_PARTAGES' | translate }}</mat-chip-option>
+      </mat-chip-listbox>
+      <button mat-icon-button (click)="toggleUnread()" [matTooltip]="'NOTIF_FILTER_UNREAD' | translate">
+        <mat-icon>{{onlyUnread ? 'drafts' : 'mail'}}</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="clearAll()" [matTooltip]="'NOTIF_CLEAR_ALL' | translate">
+        <mat-icon>delete_sweep</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+
+  <div class="notif-loading" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+    <span>{{ 'NOTIF_LOADING' | translate }}</span>
+  </div>
+
+  <div class="notif-list" *ngIf="!loading">
+    <mat-card *ngFor="let n of filtered" class="notif-card" [ngClass]="n.type + (n.lu ? ' notif-lu' : ' notif-unread')">
+      <div class="notif-dot" [ngClass]="n.type" *ngIf="!n.lu"></div>
+      <div class="notif-timeline">
+        <mat-icon class="notif-ico" [ngClass]="n.type">
+          {{ n.type === 'info' ? 'info' : n.type === 'urgent' ? 'error' : n.type === 'rappel' ? 'event_note' : 'share' }}
+        </mat-icon>
+        <div class="notif-line"></div>
+      </div>
+      <div class="notif-content">
+        <div class="notif-title-row">
+          <!-- Utilisation du pipe translate sur titre/message -->
+          <span class="notif-titre">{{ n.titre | translate }}</span>
+          <span *ngIf="!n.lu" class="notif-badge"><mat-chip color="warn">{{ 'NOTIF_UNREAD' | translate }}</mat-chip></span>
+        </div>
+        <div class="notif-date">{{ n.date | date:'short' }}</div>
+        <div class="notif-msg">{{ n.message | translate }}</div>
+        <div *ngIf="n.lien" class="notif-link">
+          <a [href]="n.lien" target="_blank">{{ 'DOCS_BOUTON_VOIR' | translate }}</a>
+        </div>
+        <div class="notif-actions">
+          <button mat-button *ngIf="!n.lu" color="primary" (click)="markAsRead(n)">
+            {{ 'NOTIF_MARK_AS_READ' | translate }}
+          </button>
+          <button mat-button *ngIf="n.lu" color="accent" (click)="markAsUnread(n)">
+            {{ 'NOTIF_MARK_AS_UNREAD' | translate }}
+          </button>
+          <button mat-button color="warn" (click)="deleteNotif(n)">
+            {{ 'NOTIF_DELETE' | translate }}
+          </button>
+        </div>
+      </div>
+    </mat-card>
+    <div *ngIf="filtered.length === 0" class="notif-empty">
+      <mat-icon>mail</mat-icon> {{ 'NOTIF_EMPTY' | translate }}
+    </div>
+  </div>
+</div>

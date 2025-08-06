@@ -1,0 +1,36 @@
+<div class="parametres-container">
+  <mat-card class="parametres-header">
+    <h1>
+      <span class="material-icons">settings</span>
+      {{ 'PARAMETRES' | translate }}
+    </h1>
+    <p>{{ 'PARAMETRES_DESC' | translate }}</p>
+  </mat-card>
+
+  <mat-card class="parametres-card">
+    <div class="setting-row">
+      <span>
+        <mat-icon>notifications_active</mat-icon>
+        {{ 'ACTIVER_NOTIFS' | translate }}
+      </span>
+      <mat-slide-toggle [(ngModel)]="notifications" color="primary"></mat-slide-toggle>
+    </div>
+    <div class="setting-row">
+      <span>
+        <mat-icon>brightness_6</mat-icon>
+        {{ 'MODE_SOMBRE' | translate }}
+      </span>
+      <mat-slide-toggle [(ngModel)]="darkMode" color="primary"></mat-slide-toggle>
+    </div>
+    <div class="setting-row lang-row">
+      <span>
+        <mat-icon>language</mat-icon>
+        {{ 'LANGUE' | translate }}
+      </span>
+      <div>
+        <button mat-stroked-button color="primary" [disabled]="lang==='fr'">{{ 'FR' | translate }}</button>
+        <button mat-stroked-button color="primary" [disabled]="lang==='nl'">{{ 'NL' | translate }}</button>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,44 @@
+<div class="rdv-container">
+  <h2>
+    <mat-icon>event_available</mat-icon>
+    {{ 'RDV_TITRE' | translate }}
+  </h2>
+
+  <mat-card class="rdv-card">
+    <form (ngSubmit)="prendreRdv()" *ngIf="!rdvPris">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>{{ 'SPECIALITE' | translate }}</mat-label>
+        <mat-select [(ngModel)]="specialite" name="specialite" required>
+          <mat-option value="generaliste">{{ 'GENERALISTE' | translate }}</mat-option>
+          <mat-option value="dermatologue">{{ 'DERMATOLOGUE' | translate }}</mat-option>
+          <mat-option value="cardiologue">{{ 'CARDIOLOGUE' | translate }}</mat-option>
+          <mat-option value="gynecologue">{{ 'GYNECOLOGUE' | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>{{ 'DATE' | translate }}</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="date" name="date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>{{ 'HEURE' | translate }}</mat-label>
+        <input matInput [placeholder]="'EX_HEURE' | translate" [(ngModel)]="heure" name="heure" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="btn-rdv">
+        {{ 'VALIDER_RDV' | translate }}
+      </button>
+    </form>
+
+    <div class="confirmation" *ngIf="rdvPris">
+      <mat-icon>check_circle</mat-icon>
+      <p>{{ 'RDV_CONFIRM' | translate }}</p>
+      <p><strong>{{ 'SPECIALITE' | translate }} :</strong> {{ specialite | translate }}</p>
+      <p><strong>{{ 'DATE' | translate }} :</strong> {{ date | date:'fullDate' }}</p>
+      <p><strong>{{ 'HEURE' | translate }} :</strong> {{ heure }}</p>
+    </div>
+  </mat-card>
+</div>

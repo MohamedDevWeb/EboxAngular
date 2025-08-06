@@ -1,0 +1,5 @@
+// .vscode/settings.json
+{
+  // ignore les règles SCSS inconnues (ex. @apply)
+  "scss.lint.unknownAtRules": "ignore"
+}

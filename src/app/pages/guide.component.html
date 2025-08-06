@@ -1,0 +1,18 @@
+<div class="guide-container">
+  <mat-card class="guide-header">
+    <h1>
+      <span class="material-icons">local_hospital</span>
+      {{ 'GUIDE.TITLE' | translate }}
+    </h1>
+    <p>{{ 'GUIDE.DESC' | translate }}</p>
+  </mat-card>
+  <div class="guide-list">
+    <mat-card class="guide-card" *ngFor="let g of guides">
+      <mat-icon>{{ g.icon }}</mat-icon>
+      <div class="guide-txt">
+        <div class="guide-title">{{ ('GUIDE.' + g.key + '.TITLE') | translate }}</div>
+        <div class="guide-desc">{{ ('GUIDE.' + g.key + '.DESC') | translate }}</div>
+      </div>
+    </mat-card>
+  </div>
+</div>
