@@ -22,7 +22,7 @@ eBox Santé+ est une application web moderne et responsive conçue pour simplifi
 
 - **Chatbot intégré** pour l’aide et l’orientation des utilisateurs
 
-- **Support multilingue (FR/NL/EN)** avec sélecteur de langue dynamique
+- **Support multilingue (FR/NL)** avec sélecteur de langue dynamique
 
 - **Authentification citoyenne** (simulateur itsme)
 
@@ -66,7 +66,7 @@ eBox Santé+ est une application web moderne et responsive conçue pour simplifi
 
 ```bash
 
-git clone https://github.com/MohamedDevWeb/ebox-sante-plus.git
+git clone https://github.com/MohamedDevWeb/EboxAngular.git
 
 cd ebox-sante-plus
 

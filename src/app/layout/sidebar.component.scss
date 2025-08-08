@@ -121,7 +121,7 @@
     align-items: center;
     border-radius: 0px !important;
     position: absolute;
-top: 62px; // OU essaye 64px, 72px, etc. selon ton header ! (augmente pour descendre le burger)
+top: 62px;
 left: 0;
 right: 340px;
 margin: 0 auto;
@@ -130,7 +130,7 @@ margin: 0 auto;
     box-shadow: 0 2px 14px #00528813;
 
 .burger-btn.mobile-header {
-  background: rgba(255,255,255,0.36) !important; // Verre dépoli
+  background: rgba(255,255,255,0.36) !important;
   backdrop-filter: blur(10px) saturate(160%);
   -webkit-backdrop-filter: blur(10px) saturate(160%);
   border: none;
@@ -144,7 +144,7 @@ margin: 0 auto;
   flex-direction: column;
   padding: 0;
   margin: 0;
-  position: relative; // ou absolute si dans le header
+  position: relative;
   z-index: 9999 !important;
   cursor: pointer;
   transition: box-shadow 0.18s, background 0.18s, transform 0.18s;
@@ -243,7 +243,6 @@ margin: 0 auto;
   .sidebar.is-mobile .sidebar-nav { width: 97vw; max-width: 99vw; padding-top: 40px;}
 }
 
-// Fix bug Angular Material mat-icon (lettres parasites)
 .sidebar .icon, .sidebar .label {
   font-size: inherit !important;
   line-height: inherit !important;
@@ -251,7 +250,6 @@ margin: 0 auto;
   font-style: inherit !important;
   font-weight: inherit !important;
 }
-// Fix icons Angular Material: Surtout NE PAS surcharger la font-family !
 .sidebar .icon mat-icon,
 .sidebar .mat-icon,
 .sidebar .icon .mat-icon {
