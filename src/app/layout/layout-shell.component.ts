@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -32,7 +32,33 @@ export class LayoutShellComponent {
 
   profil$ = this.profilService.getProfil(); // Observable<ProfilData>
 
+  // -------- Ajout gestion mobile/burger menu --------
+  isMobile = false;
+  menuOpen = false;
+
   constructor(private router: Router, private profilService: ProfilService) {}
+
+  ngOnInit() {
+    this.checkMobile();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkMobile();
+  }
+
+  checkMobile() {
+    this.isMobile = window.innerWidth < 900;
+    if (!this.isMobile) {
+      this.menuOpen = false;
+    }
+  }
+
+  toggleSidebar() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  // ---------------------------------------------------
 
   onSearch() {
     if (this.search.trim()) {

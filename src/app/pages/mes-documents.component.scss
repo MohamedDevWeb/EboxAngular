@@ -100,3 +100,23 @@
   .mesdocs-header { padding: 1.2em 0.3em;}
   .doc-card { padding: 1em 0.5em;}
 }
+
+/* === Correction bug lettres parasites sur mobile (icônes Angular Material) === */
+.doc-card mat-icon,
+.mat-icon,
+.doc-icon,
+.doc-meta mat-icon,
+.doc-actions mat-icon {
+  font-family: 'Material Icons' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  line-height: 1 !important;
+  direction: ltr !important;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-size: 24px !important;
+  display: inline-block !important;
+}

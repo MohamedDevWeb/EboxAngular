@@ -1,26 +1,25 @@
-/* src/styles.scss */
+/* === src/styles.scss : THEME GLOBAL ULTRA CLEAN === */
 
-/* ① Intégration de Tailwind */
+/* ① Intégration de Tailwind & Angular Material */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import '@angular/material/prebuilt-themes/indigo-pink.css'; // ou autre thème
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-
-/* ② Mode clair par défaut */
+/* ② Mode clair (par défaut) */
 html {
   @apply bg-gray-50 text-gray-900;
 }
 
-/* ③ Mode sombre (quand <html class="dark"> est présent) */
+/* ③ Mode sombre si classe dark sur <html> */
 html.dark {
   @apply bg-gray-900 text-gray-100;
 }
 
-/* ④ Reset / réglages globaux */
+/* ④ Reset + polices */
 body {
   @apply m-0 p-0 font-sans leading-normal;
+  font-family: 'Inter', 'Roboto', 'Montserrat', Arial, sans-serif;
 }
 
 /* ⑤ En‑tête */
@@ -53,7 +52,7 @@ p {
   @apply mb-4;
 }
 
-/* ⑪ Boutons */
+/* ⑪ Boutons génériques */
 button {
   @apply inline-block bg-primary text-white font-medium py-2 px-4 rounded hover:bg-secondary transition;
 }
@@ -61,4 +60,66 @@ button {
 /* ⑫ Formulaires */
 input, select, textarea {
   @apply border border-gray-300 dark:border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+/* ⑬ Taille et contraintes globales */
+html, body {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #f6f7fa !important;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* ⑭ Correction GLOBALE icons Angular Material (TOUCHER À RIEN) */
+mat-icon, .mat-icon, .icon mat-icon, .sidebar .icon mat-icon, .sidebar .mat-icon {
+  font-family: 'Material Icons' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  line-height: 1 !important;
+  direction: ltr !important;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-size: 24px !important;
+  display: inline-block !important;
+}
+
+/* JAMAAAAAAIS font-family: inherit sur .icon ou .label !! */
+
+
+
+/* Correction Material Icons responsive mobile/tablette */
+mat-icon, .mat-icon, .icon mat-icon, .sidebar .icon mat-icon, .sidebar .mat-icon {
+  font-family: 'Material Icons' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  letter-spacing: normal !important;
+  line-height: 1 !important;
+  text-transform: none !important;
+  display: inline-block !important;
+  direction: ltr !important;
+  font-size: 24px !important;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 900px) {
+  mat-icon, .mat-icon, .icon mat-icon, .sidebar .icon mat-icon, .sidebar .mat-icon {
+    font-family: 'Material Icons' !important;
+    font-size: 22px !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    letter-spacing: normal !important;
+    line-height: 1 !important;
+    text-transform: none !important;
+    display: inline-block !important;
+    direction: ltr !important;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
 }

@@ -7,28 +7,58 @@
   align-items: stretch;
   box-shadow: 2px 0 8px #00295b13;
   border-top-right-radius: 20px;
-  padding-top: 0;
-  z-index: 20;
+  z-index: 200;
+  transition: width 0.2s;
 
-  .sidebar-logo {
+  .sidebar-logo-col {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 0 0 0px 0;
-    margin-top: 8px;
-    background: transparent;
-    min-height: 100px;
+    justify-content: flex-start;
+    padding: 26px 0 16px 0;
+    min-height: 156px;
+    user-select: none;
     width: 100%;
-    img {
-      width: 330px;
-      height: auto;
 
-      object-fit: contain;
-      display: block;
-      filter: drop-shadow(0 1px 8px #009fdc23);
+    .sidebar-logo-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      img {
+        width: 82px;
+        height: 82px;
+        max-width: 96vw;
+        max-height: 94px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 6px auto;
+        filter: drop-shadow(0 1px 8px #009fdc23);
+        background: transparent;
+      }
+    }
+    .sidebar-logo-txt {
+      width: 100%;
+      text-align: center;
+      .ebox-title {
+        color: #2245e3;
+        font-size: 1.18rem;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        margin-bottom: 0;
+        line-height: 1.1;
+      }
+      .ebox-admin {
+        color: #4b5563;
+        font-size: 0.61rem;
+        font-weight: 700;
+        letter-spacing: 0.7px;
+        margin-top: -2px;
+        opacity: 0.93;
+        font-style: italic;
+      }
     }
   }
-
 
   .sidebar-nav {
     flex: 1;
@@ -41,58 +71,198 @@
       display: flex;
       align-items: center;
       padding: 13px 18px;
-      font-size: 1.08rem;
+      font-size: 1.11rem;
       color: #185487;
       text-decoration: none;
       border-radius: 14px 0 0 14px;
       font-weight: 500;
       gap: 15px;
-      transition: background 0.12s, color 0.13s;
+      transition: background 0.12s, color 0.13s, font-size 0.14s;
+
       .icon {
-        font-size: 1.25rem;
+        font-size: 1.28rem;
+        min-width: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .label {
+        flex: 1;
+        text-align: left;
+        font-size: inherit;
       }
       &:hover, &.active {
         background: #e0eefa;
-        color: #1577bd;
+        color: #2245e3;
       }
     }
     .logout {
       color: #e75151;
       font-weight: 600;
       margin-top: 15px;
-      &:hover {
-        background: #ffefef;
-        color: #b90e2d;
+      &:hover { background: #ffefef; color: #b90e2d; }
+    }
+  }
+
+  .burger-btn.mobile-header {
+    display: none;
+  }
+  .sidebar-overlay {
+    display: none;
+  }
+
+  // ------- MOBILE MODE (BURGER) -------
+  &.is-mobile {
+    background: transparent !important;
+    width: 50px!important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    flex-direction: row !important;
+    align-items: center;
+    border-radius: 0px !important;
+    position: absolute;
+top: 62px; // OU essaye 64px, 72px, etc. selon ton header ! (augmente pour descendre le burger)
+left: 0;
+right: 340px;
+margin: 0 auto;
+
+    z-index: 2500; // au-dessus du header
+    box-shadow: 0 2px 14px #00528813;
+
+.burger-btn.mobile-header {
+  background: rgba(255,255,255,0.36) !important; // Verre dépoli
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  border: none;
+  box-shadow: 0 4px 20px 0 rgba(0,82,136,0.16), 0 1.5px 8px 0 rgba(0,82,136,0.08);
+  border-radius: 50%; // Rond parfait
+  width: 48px;
+  height: 48px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  position: relative; // ou absolute si dans le header
+  z-index: 9999 !important;
+  cursor: pointer;
+  transition: box-shadow 0.18s, background 0.18s, transform 0.18s;
+
+  &:hover,
+  &:focus {
+    background: rgba(255,255,255,0.66) !important; // Plus lumineux au hover
+    box-shadow: 0 6px 24px 0 rgba(0,82,136,0.20);
+    transform: scale(1.07);
+  }
+
+  span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    background: #005288;
+    border-radius: 3px;
+    transition: all 0.22s cubic-bezier(.45,1.8,.35,1);
+    box-shadow: 0 1px 2px rgba(0,82,136,0.11);
+  }
+
+  &.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background: #ffb100;
+  }
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+  &.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background: #ffb100;
+  }
+}
+
+    .sidebar-nav {
+      position: fixed;
+      top: 0; left: 0;
+      height: 100vh;
+      width: 86vw;
+      max-width: 340px;
+      background: #f4f8fc;
+      box-shadow: 2px 0 24px #00295bb5;
+      border-top-right-radius: 22px;
+      border-bottom-right-radius: 22px;
+      transform: translateX(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .22s cubic-bezier(.77,0,.18,1), opacity .19s;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin: 0;
+      padding-top: 50px;
+      z-index: 2590;
+      &.mobile-visible {
+        transform: translateX(0%);
+        opacity: 1;
+        pointer-events: all;
       }
+      a, .logout {
+        font-size: 1.09rem;
+        border-radius: 0 16px 16px 0;
+        padding: 13px 22px 13px 26px;
+        .icon { font-size: 1.18rem; }
+      }
+    }
+    .sidebar-logo-col {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 136px;
+      padding: 16px 0 10px 0;
+      .sidebar-logo-img img { width: 56px; height: 56px; }
+      .sidebar-logo-txt {
+        .ebox-title { font-size: 1.19rem;}
+        .ebox-admin { font-size: 0.79rem;}
+      }
+    }
+    .sidebar-overlay {
+      display: block;
+      position: fixed;
+      left: 0; top: 0; right: 0; bottom: 0;
+      background: #122a40b3;
+      z-index: 2580;
+      transition: opacity 0.2s;
     }
   }
 }
 
-@media (max-width: 900px) {
-  .sidebar {
-    width: 100vw;
-    min-height: 58px;
-    flex-direction: row;
-    align-items: flex-start;
-    border-top-right-radius: 0;
-    .sidebar-logo {
-      min-height: unset;
-      padding: 7px 8px 7px 8px;
-      margin-bottom: 0;
-      border-bottom: none;
-      img { width: 38px; }
-    }
-    .sidebar-nav {
-      flex-direction: row;
-      gap: 0;
-      margin-top: 0;
-      a, .logout {
-        padding: 8px 8px;
-        font-size: 0.98rem;
-        border-radius: 7px;
-        gap: 10px;
-        .icon { font-size: 1.1rem; }
-      }
-    }
-  }
+/* SMARTPHONE : compact encore plus */
+@media (max-width: 600px) {
+  .sidebar.is-mobile .sidebar-logo-img img { width: 36px; height: 36px; }
+  .sidebar.is-mobile .ebox-title { font-size: 0.99rem;}
+  .sidebar.is-mobile .ebox-admin { font-size: 0.62rem;}
+  .sidebar.is-mobile .sidebar-nav { width: 97vw; max-width: 99vw; padding-top: 40px;}
+}
+
+// Fix bug Angular Material mat-icon (lettres parasites)
+.sidebar .icon, .sidebar .label {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+}
+// Fix icons Angular Material: Surtout NE PAS surcharger la font-family !
+.sidebar .icon mat-icon,
+.sidebar .mat-icon,
+.sidebar .icon .mat-icon {
+  font-family: 'Material Icons' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  line-height: 1 !important;
+  direction: ltr !important;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }

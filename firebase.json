@@ -1,0 +1,16 @@
+{
+  "hosting": {
+"public": "dist/ebox-sante-plus",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

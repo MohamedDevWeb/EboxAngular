@@ -1,7 +1,9 @@
 <div class="main-layout">
   <app-sidebar></app-sidebar>
   <div class="main-content">
-    <header class="main-header">
+    <header class="main-header" [class.mobile-header]="isMobile">
+      <!-- Burger mobile affiché ici si isMobile -->
+      
       <div class="center">
         <input
           type="text"
